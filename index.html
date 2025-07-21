@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integra Arquitectos Laguirre | Arquitectura e Ingeniería</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- FONDO ANIMADO (líneas blueprint) -->
+  <canvas id="bg-lines"></canvas>
+
+  <!-- HEADER HERO: video + animación + overlay + nav/logo -->
+  <header class="header-hero fade-in">
+    <video autoplay loop muted playsinline id="bg-video">
+      <source src="./img/fondo-arquitectura.mp4" type="video/mp4">
+      Tu navegador no soporta el video.
+    </video>
+    <canvas id="architect-lines"></canvas>
+    <div class="header-overlay"></div>
+    <div class="container header-content">
+      <!-- LOGO A LA IZQUIERDA -->
+      <img src="./img/logo-integra.png" alt="Logo Integra Arquitectos Laguirre" class="logo-anima">
+      <!-- TÍTULO CENTRADO -->
+      <div>
+        <h1 class="titulo-anima">INTEGRA ARQUITECTOS<br>LAGUIRRE</h1>
+      </div>
+      <!-- MENÚ A LA DERECHA -->
+      <nav>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#quienes-somos">Quiénes somos</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- INICIO -->
+  <section id="inicio" class="fade-in">
+    <div class="container">
+      <h2>Transformamos ideas en espacios funcionales</h2>
+      <p>Soluciones integrales en arquitectura, ingeniería y construcción en Ciudad de México y toda la República Mexicana.</p>
+    </div>
+  </section>
+
+  <!-- QUIÉNES SOMOS -->
+  <section id="quienes-somos" class="fade-in">
+    <div class="container">
+      <h2>Quiénes somos</h2>
+      <p>
+        En <b>Integra Arquitectos Laguirre</b> nos dedicamos a la proyección, construcción, mantenimiento y remodelación de obras civiles e industriales. Somos un equipo de especialistas en arquitectura e ingeniería, enfocados en ofrecer soluciones innovadoras y eficientes, adaptadas a las necesidades de cada cliente.
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="fade-in">
+    <div class="container">
+      <h2>Servicios</h2>
+      <ul>
+        <li>Proyectos arquitectónicos, ejecutivos y de ingeniería.</li>
+        <li>Construcción, remodelación y mantenimiento de obras civiles e industriales.</li>
+        <li>Supervisión, dirección y gestión de obra.</li>
+        <li>Estudios, análisis, especificaciones técnicas y trámites legales.</li>
+        <li>Compraventa y renta de maquinaria, materiales y equipos para la construcción.</li>
+        <li>Participación en licitaciones y concursos públicos o privados.</li>
+        <li>Consultoría y asesoría especializada en arquitectura e ingeniería.</li>
+        <li>Importación, exportación y comercialización de materiales y tecnología para la construcción.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <section id="proyectos" class="fade-in">
+    <div class="container">
+      <h2>Proyectos</h2>
+      <p>Conoce algunos de nuestros proyectos más destacados en arquitectura e ingeniería.</p>
+      <div class="proyectos-galeria">
+        <!-- Aquí irán tus proyectos -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="fade-in">
+    <div class="container">
+      <h2>Contacto</h2>
+      <form>
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Correo electrónico" required>
+        <textarea name="mensaje" placeholder="Cuéntanos tu proyecto o consulta" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      <div class="contact-info">
+        <p><strong>Domicilio:</strong> Ciudad de México</p>
+        <p><strong>Email:</strong> contacto@integra-arquitectos.mx</p>
+        <p><strong>Teléfono:</strong> (55) 1234-5678</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="fade-in">
+    <div class="container">
+      <p>&copy; 2025 Integra Arquitectos Laguirre. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>
