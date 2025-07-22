@@ -3,30 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Integra Arquitectos Laguirre | Arquitectura e Ingeniería</title>
+  <title>Integra Arquitectos Laguirre</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- FONDO ANIMADO (líneas blueprint) -->
-  <canvas id="bg-lines"></canvas>
+  <!-- ===== HEADER minimalista ===== -->
+  <header class="header-hero">
+      <canvas id="header-lines-bg"></canvas>
 
-  <!-- HEADER HERO: video + animación + overlay + nav/logo -->
-  <header class="header-hero fade-in">
-    <video autoplay loop muted playsinline id="bg-video">
-      <source src="./img/fondo-arquitectura.mp4" type="video/mp4">
-      Tu navegador no soporta el video.
-    </video>
-    <canvas id="architect-lines"></canvas>
-    <div class="header-overlay"></div>
-    <div class="container header-content">
-      <!-- LOGO A LA IZQUIERDA -->
-      <img src="./img/logo-integra.png" alt="Logo Integra Arquitectos Laguirre" class="logo-anima">
-      <!-- TÍTULO CENTRADO -->
-      <div>
-        <h1 class="titulo-anima">INTEGRA ARQUITECTOS<br>LAGUIRRE</h1>
-      </div>
-      <!-- MENÚ A LA DERECHA -->
-      <nav>
+    <div class="header-content">
+      <a href="#" class="header-logo-link">
+        <img src="./img/logo-integra.png" alt="Logo Integra Arquitectos Laguirre" class="logo-arq">
+      </a>
+      <nav class="header-nav-center">
         <ul>
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#quienes-somos">Quiénes somos</a></li>
@@ -36,17 +26,26 @@
         </ul>
       </nav>
     </div>
+    <canvas id="blueprint-bg"></canvas>
   </header>
 
-  <!-- INICIO -->
-  <section id="inicio" class="fade-in">
-    <div class="container">
-      <h2>Transformamos ideas en espacios funcionales</h2>
-      <p>Soluciones integrales en arquitectura, ingeniería y construcción en Ciudad de México y toda la República Mexicana.</p>
+  <!-- ===== HERO seccion con video de fondo y animación blueprint ===== -->
+  <section class="hero-arquitectos">
+    <!-- VIDEO DE FONDO -->
+    <video autoplay loop muted playsinline id="hero-video">
+      <source src="./img/fondo-arquitectura.mp4" type="video/mp4">
+      Tu navegador no soporta el video de fondo.
+    </video>
+    <!-- Canvas animado de blueprint -->
+    <canvas id="hero-bg"></canvas>
+  <div class="hero-inner">
+    <img src="./img/logo-blanco.png" alt="Logo Integra Arquitectos" class="hero-logo-icono">
+    <h1 class="hero-title">INTEGRA ARQUITECTOS<br>LAGUIRRE</h1>
+    <p class="hero-sub">Soluciones en arquitectura, ingeniería y construcción</p>
     </div>
   </section>
 
-  <!-- QUIÉNES SOMOS -->
+  <!-- ===== QUIÉNES SOMOS ===== -->
   <section id="quienes-somos" class="fade-in">
     <div class="container">
       <h2>Quiénes somos</h2>
@@ -56,7 +55,7 @@
     </div>
   </section>
 
-  <!-- SERVICIOS -->
+  <!-- ===== SERVICIOS ===== -->
   <section id="servicios" class="fade-in">
     <div class="container">
       <h2>Servicios</h2>
@@ -73,18 +72,18 @@
     </div>
   </section>
 
-  <!-- PROYECTOS -->
+  <!-- ===== PROYECTOS ===== -->
   <section id="proyectos" class="fade-in">
     <div class="container">
       <h2>Proyectos</h2>
       <p>Conoce algunos de nuestros proyectos más destacados en arquitectura e ingeniería.</p>
       <div class="proyectos-galeria">
-        <!-- Aquí irán tus proyectos -->
+        <!-- Aquí irán tus proyectos (puedes usar cards con imágenes/descripciones) -->
       </div>
     </div>
   </section>
 
-  <!-- CONTACTO -->
+  <!-- ===== CONTACTO ===== -->
   <section id="contacto" class="fade-in">
     <div class="container">
       <h2>Contacto</h2>
@@ -102,12 +101,13 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ===== FOOTER ===== -->
   <footer class="fade-in">
     <div class="container">
       <p>&copy; 2025 Integra Arquitectos Laguirre. Todos los derechos reservados.</p>
     </div>
   </footer>
+
   <script src="main.js"></script>
 </body>
 </html>
