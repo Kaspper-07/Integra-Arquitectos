@@ -26,12 +26,13 @@
     </div>
   </header>
 
-  <!-- ===== HERO CON VIDEO DE FONDO ===== -->
+  <!-- ===== HERO CON VIDEO Y LÍNEAS BLUEPRINT ===== -->
   <section class="hero-full" id="inicio">
     <video autoplay muted loop playsinline id="hero-video">
       <source src="./img/fondo-arquitectura.mp4" type="video/mp4">
       Tu navegador no soporta el video de fondo.
     </video>
+    <canvas id="blueprint-lines"></canvas>
     <div class="hero-overlay">
       <div class="hero-logo-container">
         <img src="./img/logo-integra.png" alt="Logo Integra" class="hero-logo">
@@ -124,13 +125,11 @@
           <img src="./img/consultoria.jpg" alt="Consultoría técnica">
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- ===== PROYECTOS (VIDEO DE FONDO) ===== -->
   <section id="proyectos" class="proyectos-section fade-in">
-    <!-- Video de fondo -->
     <video autoplay loop muted playsinline class="proyectos-bg-video">
       <source src="./img/oficina.mp4" type="video/mp4">
       Tu navegador no soporta el video de fondo.
@@ -196,23 +195,23 @@
     </div>
   </section>
 
+  <!-- ===== CONTADOR DE CIFRAS ===== -->
   <section class="stats-section fade-in">
-  <div class="stats-container">
-    <div class="stat-block animate-fade-up">
-      <span class="counter" data-goal="50">0</span>
-      <span class="stat-label">Proyectos ejecutados</span>
+    <div class="stats-container">
+      <div class="stat-block animate-fade-up">
+        <span class="counter" data-goal="50">0</span>
+        <span class="stat-label">Proyectos ejecutados</span>
+      </div>
+      <div class="stat-block animate-fade-up" style="animation-delay:0.1s">
+        <span class="counter" data-goal="15">0</span>
+        <span class="stat-label">Años de experiencia</span>
+      </div>
+      <div class="stat-block animate-fade-up" style="animation-delay:0.2s">
+        <span class="counter" data-goal="100">0</span>
+        <span class="stat-label">Clientes satisfechos</span>
+      </div>
     </div>
-    <div class="stat-block animate-fade-up" style="animation-delay:0.1s">
-      <span class="counter" data-goal="15">0</span>
-      <span class="stat-label">Años de experiencia</span>
-    </div>
-    <div class="stat-block animate-fade-up" style="animation-delay:0.2s">
-      <span class="counter" data-goal="100">0</span>
-      <span class="stat-label">Clientes satisfechos</span>
-    </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- ===== CONTACTO ===== -->
   <section id="contacto" class="contacto-section fade-in">
