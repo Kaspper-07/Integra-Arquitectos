@@ -6,45 +6,53 @@
   <title>Integra Arquitectos Laguirre</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine"></script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles-basic"></script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-links"></script>
+
 </head>
 <body>
 
   <!-- ===== NAVBAR ELEGANTE ===== -->
   <header class="main-header">
-    <div class="navbar-container">
-      <nav class="navbar">
-        <ul class="nav-list">
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#quienes-somos">Quiénes somos</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#proyectos">Proyectos</a></li>
-        </ul>
-        <div class="nav-button-container">
-          <a href="#servicios" class="nav-button">Nuestros Servicios</a>
-        </div>
-      </nav>
+  <canvas id="navbar-blueprint"></canvas>
+  <nav class="navbar-wide">
+    <div class="nav-logo">
+      <img src="./img/logo-integra.png" alt="Integra Arquitectos Laguirre" />
     </div>
-  </header>
+    <ul class="nav-list-wide">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#quienes-somos">Quiénes somos</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#especialidades">Especialidades</a></li>
+    </ul>
+  </nav>
+</header>
+
+
 
   <!-- ===== HERO CON VIDEO Y LÍNEAS BLUEPRINT ===== -->
   <section class="hero-full" id="inicio">
-    <video autoplay muted loop playsinline id="hero-video">
-      <source src="./img/fondo-arquitectura.mp4" type="video/mp4">
-      Tu navegador no soporta el video de fondo.
-    </video>
-    <canvas id="blueprint-lines"></canvas>
-    <div class="hero-overlay">
-      <div class="hero-logo-container">
-        <img src="./img/logo-integra.png" alt="Logo Integra" class="hero-logo">
-      </div>
-      <div class="hero-text-group">
-        <p class="hero-subtop">Soluciones en construcción e ingeniería</p>
-        <h1 class="hero-title-main">INTEGRA ARQUITECTOS<br>LAGUIRRE</h1>
-        <p class="hero-subbottom">Comprometidos con la calidad</p>
-        <a href="#contacto" class="hero-btn">Contáctanos →</a>
-      </div>
+  <video autoplay muted loop playsinline id="hero-video">
+    <source src="./img/fondo-arquitectura.mp4" type="video/mp4">
+    Tu navegador no soporta el video de fondo.
+  </video>
+  <canvas id="blueprint-lines"></canvas>
+  <div class="hero-overlay">
+    <div class="hero-text-group">
+      <p class="hero-subtop">Soluciones en construcción e ingeniería</p>
+      <h1 class="hero-title-main">
+  <span>INTEGRA</span><br>
+  <span>ARQUITECTOS</span><br>
+  <span>LAGUIRRE</span>
+</h1>
+      
+      <p class="hero-subbottom">Comprometidos con la calidad</p>
+      <a href="#contacto" class="hero-btn">Contáctanos →</a>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- ===== QUIÉNES SOMOS ===== -->
   <section id="quienes-somos" class="quienes-somos-section fade-in">
@@ -71,7 +79,6 @@
   <section id="servicios" class="servicios-section fade-in">
     <div class="servicios-overlay"></div>
     <div class="servicios-container">
-
       <h2 class="servicios-title animate-fade-up">Nuestros Servicios</h2>
 
       <!-- Servicio 1 -->
@@ -128,90 +135,87 @@
     </div>
   </section>
 
-  <!-- ===== PROYECTOS (VIDEO DE FONDO) ===== -->
-  <section id="proyectos" class="proyectos-section fade-in">
-    <video autoplay loop muted playsinline class="proyectos-bg-video">
-      <source src="./img/oficina.mp4" type="video/mp4">
-      Tu navegador no soporta el video de fondo.
-    </video>
-    <div class="proyectos-overlay"></div>
-    <div class="proyectos-container">
-      <h2 class="proyectos-title animate-fade-up">Proyectos Destacados</h2>
-      <p class="proyectos-desc animate-fade-up" style="animation-delay:.1s">
-        Conoce algunos de los proyectos más representativos en los que hemos participado, abarcando desde edificaciones residenciales y comerciales hasta obras industriales y urbanas.
-      </p>
-      <div class="proyectos-grid">
-        <!-- Proyecto 1 -->
-        <div class="proyecto-card animate-fade-up" style="animation-delay:.12s">
-          <div class="proyecto-img">
-            <img src="./img/residencial.jpg" alt="Proyecto Residencial">
-          </div>
-          <div class="proyecto-info">
-            <h3>Residencial Los Encinos</h3>
-            <p>Desarrollo de conjunto habitacional de 12 casas con enfoque en diseño sustentable, eficiencia energética y espacios funcionales.</p>
-          </div>
-        </div>
-        <!-- Proyecto 2 -->
-        <div class="proyecto-card animate-fade-up" style="animation-delay:.16s">
-          <div class="proyecto-img">
-            <img src="./img/edificio.jpg" alt="Edificio Corporativo">
-          </div>
-          <div class="proyecto-info">
-            <h3>Edificio Corporativo Altum</h3>
-            <p>Construcción de oficinas de alto nivel con sistemas inteligentes de iluminación, ventilación y control de acceso.</p>
-          </div>
-        </div>
-        <!-- Proyecto 3 -->
-        <div class="proyecto-card animate-fade-up" style="animation-delay:.2s">
-          <div class="proyecto-img">
-            <img src="./img/nave.jpg" alt="Nave Industrial">
-          </div>
-          <div class="proyecto-info">
-            <h3>Nave Industrial TecPark</h3>
-            <p>Diseño y ejecución de nave industrial para manufactura ligera, incluyendo áreas de carga, descarga y oficinas administrativas.</p>
-          </div>
-        </div>
-        <!-- Proyecto 4 -->
-        <div class="proyecto-card animate-fade-up" style="animation-delay:.24s">
-          <div class="proyecto-img">
-            <img src="./img/restaurante.jpg" alt="Restaurante Gourmet">
-          </div>
-          <div class="proyecto-info">
-            <h3>Restaurante Gourmet Marea</h3>
-            <p>Remodelación y ambientación de restaurante, integración de materiales naturales y diseño de iluminación escénica.</p>
-          </div>
-        </div>
-        <!-- Proyecto 5 -->
-        <div class="proyecto-card animate-fade-up" style="animation-delay:.28s">
-          <div class="proyecto-img">
-            <img src="./img/parque.jpg" alt="Espacio Urbano">
-          </div>
-          <div class="proyecto-info">
-            <h3>Rehabilitación Parque Urbano</h3>
-            <p>Mejoramiento de áreas verdes, creación de andadores, mobiliario y espacios recreativos para la convivencia social.</p>
-          </div>
-        </div>
+  <!-- ===== ESPECIALIDADES ===== -->
+
+<section id="especialidades" class="especialidades-acordeon fade-in">
+  <!-- Video de fondo -->
+  <video autoplay muted loop playsinline class="especialidades-video-bg">
+    <source src="./img/oficina.mp4" type="video/mp4">
+    Tu navegador no soporta el video de fondo.
+  </video>
+  <!-- Overlay para oscurecer -->
+  <div class="especialidades-bg-overlay"></div>
+
+   <!-- TÍTULO -->
+  <h2 class="especialidades-titulo">Especialidades</h2>
+
+  <!-- Contenido acordeón -->
+  <div class="acordeon-list">
+    <div class="acordeon-item" tabindex="0">
+      <div class="acordeon-titulo">Residencial</div>
+      <div class="acordeon-contenido">
+        <h3>Arquitectura Residencial</h3>
+        <p>
+          Diseño y ejecución de viviendas unifamiliares, condominios y conjuntos habitacionales, con enfoque en funcionalidad, confort y estilo. Nuestros proyectos residenciales se distinguen por la integración de soluciones innovadoras y el cumplimiento de altos estándares de calidad.
+        </p>
       </div>
     </div>
-  </section>
+    <div class="acordeon-item" tabindex="0">
+      <div class="acordeon-titulo">Comercial</div>
+      <div class="acordeon-contenido">
+        <h3>Arquitectura Comercial</h3>
+        <p>
+          Creación de espacios para negocios, oficinas y locales comerciales, priorizando eficiencia, imagen corporativa y experiencia de usuario. Buscamos generar ambientes funcionales y atractivos para potenciar el éxito de cada empresa.
+        </p>
+      </div>
+    </div>
+    <div class="acordeon-item" tabindex="0">
+      <div class="acordeon-titulo">Industrial</div>
+      <div class="acordeon-contenido">
+        <h3>Arquitectura Industrial</h3>
+        <p>
+          Proyectos de naves industriales, plantas, almacenes y espacios de manufactura, optimizando procesos y seguridad. Nuestra experiencia garantiza instalaciones modernas, seguras y adaptadas a las necesidades productivas de nuestros clientes.
+        </p>
+      </div>
+    </div>
+    <div class="acordeon-item" tabindex="0">
+      <div class="acordeon-titulo">Urbano</div>
+      <div class="acordeon-contenido">
+        <h3>Espacios Urbanos y Paisajismo</h3>
+        <p>
+          Rehabilitación de parques, jardines y áreas públicas, creando ambientes sostenibles y de convivencia. Impulsamos proyectos de integración urbana que contribuyen al desarrollo social y ambiental de las comunidades.
+        </p>
+      </div>
+    </div>
+    <div class="acordeon-item" tabindex="0">
+      <div class="acordeon-titulo">Consultoría</div>
+      <div class="acordeon-contenido">
+        <h3>Consultoría y Supervisión Técnica</h3>
+        <p>
+          Asesoría y supervisión en todas las fases del proyecto, garantizando calidad, cumplimiento y eficiencia. Nuestro equipo técnico acompaña cada etapa del proceso constructivo para asegurar resultados óptimos y confiables.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
   <!-- ===== CONTADOR DE CIFRAS ===== -->
-  <section class="stats-section fade-in">
-    <div class="stats-container">
-      <div class="stat-block animate-fade-up">
-        <span class="counter" data-goal="50">0</span>
-        <span class="stat-label">Proyectos ejecutados</span>
-      </div>
-      <div class="stat-block animate-fade-up" style="animation-delay:0.1s">
-        <span class="counter" data-goal="15">0</span>
-        <span class="stat-label">Años de experiencia</span>
-      </div>
-      <div class="stat-block animate-fade-up" style="animation-delay:0.2s">
-        <span class="counter" data-goal="100">0</span>
-        <span class="stat-label">Clientes satisfechos</span>
-      </div>
+  
+<section class="contador-section" id="contadores">
+  <div class="contador-container">
+    <div class="contador-card">
+      <div class="contador-numero"><span class="contador-mas">+</span><span data-valor="50" class="contador-valor">0</span></div>
+      <div class="contador-label">Proyectos</div>
     </div>
-  </section>
+    <div class="contador-card">
+      <div class="contador-numero"><span class="contador-mas">+</span><span data-valor="30" class="contador-valor">0</span></div>
+      <div class="contador-label">Clientes satisfechos</div>
+    </div>
+  </div>
+</section>
+
 
   <!-- ===== CONTACTO ===== -->
   <section id="contacto" class="contacto-section fade-in">
