@@ -1,99 +1,51 @@
-// ===== Animación blueprint HERO =====
-(function(){
-  const canvas = document.getElementById('hero-bg');
-  if (!canvas) return;
-  
-  function resize() {
-    canvas.width = window.innerWidth;
-    // Usa el alto real del hero, ¡siempre!
-    canvas.height = canvas.parentElement.offsetHeight;
-  }
-  resize();
-  window.addEventListener('resize', resize);
-
-  const ctx = canvas.getContext('2d');
-  function drawBlueprint() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.strokeStyle = 'rgba(255,255,255,0.10)';
-    ctx.lineWidth = 1;
-    const gap = 52;
-    const time = Date.now() * 0.0008;
-
-    // Líneas verticales animadas
-    for (let x = 0; x < canvas.width; x += gap) {
-      ctx.beginPath();
-      ctx.moveTo(x + Math.sin(time + x * 0.01) * 5, 0);
-      ctx.lineTo(x + Math.sin(time + x * 0.01) * 5, canvas.height);
-      ctx.stroke();
-    }
-    // Líneas horizontales animadas
-    for (let y = 0; y < canvas.height; y += gap) {
-      ctx.beginPath();
-      ctx.moveTo(0, y + Math.cos(time + y * 0.01) * 5);
-      ctx.lineTo(canvas.width, y + Math.cos(time + y * 0.01) * 5);
-      ctx.stroke();
-    }
-    requestAnimationFrame(drawBlueprint);
-  }
-  drawBlueprint();
-})();
-
-
-// ===== Efecto fade-in para las secciones al hacer scroll (opcional) =====
+// Animación fade-in y personalizada al hacer scroll
 document.addEventListener("DOMContentLoaded", () => {
-  const fadeEls = document.querySelectorAll('.fade-in');
-  function onScroll() {
-    fadeEls.forEach(el => {
+  const animatedEls = document.querySelectorAll('.fade-in, .animate-fade-up');
+
+  function revealOnScroll() {
+    animatedEls.forEach(el => {
       const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 40) {
+      if (rect.top < window.innerHeight - 50) {
         el.classList.add('visible');
       }
     });
   }
-  onScroll();
-  window.addEventListener('scroll', onScroll);
+
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll(); // Ejecutar al cargar por si ya está visible
 });
 
-function drawGridLinesInHeader() {
-  const canvas = document.getElementById('header-lines-bg');
-  const ctx = canvas.getContext('2d');
 
-  function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = document.querySelector('header').offsetHeight;
-  }
-
-  resizeCanvas();
-  window.addEventListener('resize', resizeCanvas);
-
-  function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    const spacing = 40;
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
-    ctx.lineWidth = 1;
-
-    // Vertical lines
-    for (let x = 0; x < canvas.width; x += spacing) {
-      ctx.beginPath();
-      ctx.moveTo(x, 0);
-      ctx.lineTo(x, canvas.height);
-      ctx.stroke();
+// Contador animado de cifras
+function animateCounter(element, end, duration = 1600) {
+  let start = 0;
+  const step = Math.ceil(end / (duration / 16));
+  function update() {
+    start += step;
+    if (start < end) {
+      element.textContent = start;
+      requestAnimationFrame(update);
+    } else {
+      element.textContent = end;
     }
-
-    // Horizontal lines
-    for (let y = 0; y < canvas.height; y += spacing) {
-      ctx.beginPath();
-      ctx.moveTo(0, y);
-      ctx.lineTo(canvas.width, y);
-      ctx.stroke();
-    }
-
-    requestAnimationFrame(draw);
   }
-
-  draw();
+  update();
 }
 
-window.addEventListener('load', () => {
-  drawGridLinesInHeader();
-});
+// Solo animar cuando aparecen en pantalla
+function statsObserver() {
+  const counters = document.querySelectorAll('.counter');
+  if (!counters.length) return;
+  let triggered = false;
+  function onScrollStats() {
+    const statsSection = document.querySelector('.stats-section');
+    if (!triggered && statsSection && statsSection.getBoundingClientRect().top < window.innerHeight - 90) {
+      counters.forEach(el => animateCounter(el, parseInt(el.dataset.goal, 10)));
+      triggered = true;
+      window.removeEventListener('scroll', onScrollStats);
+    }
+  }
+  window.addEventListener('scroll', onScrollStats);
+  onScrollStats();
+}
+document.addEventListener("DOMContentLoaded", statsObserver);

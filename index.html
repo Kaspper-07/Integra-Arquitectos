@@ -1,90 +1,221 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Integra Arquitectos Laguirre</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- ===== HEADER minimalista ===== -->
-  <header class="header-hero">
-      <canvas id="header-lines-bg"></canvas>
 
-    <div class="header-content">
-      <a href="#" class="header-logo-link">
-        <img src="./img/logo-integra.png" alt="Logo Integra Arquitectos Laguirre" class="logo-arq">
-      </a>
-      <nav class="header-nav-center">
-        <ul>
+  <!-- ===== NAVBAR ELEGANTE ===== -->
+  <header class="main-header">
+    <div class="navbar-container">
+      <nav class="navbar">
+        <ul class="nav-list">
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#quienes-somos">Quiénes somos</a></li>
           <li><a href="#servicios">Servicios</a></li>
           <li><a href="#proyectos">Proyectos</a></li>
-          <li><a href="#contacto">Contacto</a></li>
         </ul>
+        <div class="nav-button-container">
+          <a href="#servicios" class="nav-button">Nuestros Servicios</a>
+        </div>
       </nav>
     </div>
-    <canvas id="blueprint-bg"></canvas>
   </header>
 
-  <!-- ===== HERO seccion con video de fondo y animación blueprint ===== -->
-  <section class="hero-arquitectos">
-    <!-- VIDEO DE FONDO -->
-    <video autoplay loop muted playsinline id="hero-video">
+  <!-- ===== HERO CON VIDEO DE FONDO ===== -->
+  <section class="hero-full" id="inicio">
+    <video autoplay muted loop playsinline id="hero-video">
       <source src="./img/fondo-arquitectura.mp4" type="video/mp4">
       Tu navegador no soporta el video de fondo.
     </video>
-    <!-- Canvas animado de blueprint -->
-    <canvas id="hero-bg"></canvas>
-  <div class="hero-inner">
-    <img src="./img/logo-blanco.png" alt="Logo Integra Arquitectos" class="hero-logo-icono">
-    <h1 class="hero-title">INTEGRA ARQUITECTOS<br>LAGUIRRE</h1>
-    <p class="hero-sub">Soluciones en arquitectura, ingeniería y construcción</p>
-    </div>
-  </section>
-
-  <!-- ===== QUIÉNES SOMOS ===== -->
-  <section id="quienes-somos" class="fade-in">
-    <div class="container">
-      <h2>Quiénes somos</h2>
-      <p>
-        En <b>Integra Arquitectos Laguirre</b> nos dedicamos a la proyección, construcción, mantenimiento y remodelación de obras civiles e industriales. Somos un equipo de especialistas en arquitectura e ingeniería, enfocados en ofrecer soluciones innovadoras y eficientes, adaptadas a las necesidades de cada cliente.
-      </p>
-    </div>
-  </section>
-
-  <!-- ===== SERVICIOS ===== -->
-  <section id="servicios" class="fade-in">
-    <div class="container">
-      <h2>Servicios</h2>
-      <ul>
-        <li>Proyectos arquitectónicos, ejecutivos y de ingeniería.</li>
-        <li>Construcción, remodelación y mantenimiento de obras civiles e industriales.</li>
-        <li>Supervisión, dirección y gestión de obra.</li>
-        <li>Estudios, análisis, especificaciones técnicas y trámites legales.</li>
-        <li>Compraventa y renta de maquinaria, materiales y equipos para la construcción.</li>
-        <li>Participación en licitaciones y concursos públicos o privados.</li>
-        <li>Consultoría y asesoría especializada en arquitectura e ingeniería.</li>
-        <li>Importación, exportación y comercialización de materiales y tecnología para la construcción.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ===== PROYECTOS ===== -->
-  <section id="proyectos" class="fade-in">
-    <div class="container">
-      <h2>Proyectos</h2>
-      <p>Conoce algunos de nuestros proyectos más destacados en arquitectura e ingeniería.</p>
-      <div class="proyectos-galeria">
-        <!-- Aquí irán tus proyectos (puedes usar cards con imágenes/descripciones) -->
+    <div class="hero-overlay">
+      <div class="hero-logo-container">
+        <img src="./img/logo-integra.png" alt="Logo Integra" class="hero-logo">
+      </div>
+      <div class="hero-text-group">
+        <p class="hero-subtop">Soluciones en construcción e ingeniería</p>
+        <h1 class="hero-title-main">INTEGRA ARQUITECTOS<br>LAGUIRRE</h1>
+        <p class="hero-subbottom">Comprometidos con la calidad</p>
+        <a href="#contacto" class="hero-btn">Contáctanos →</a>
       </div>
     </div>
   </section>
 
+  <!-- ===== QUIÉNES SOMOS ===== -->
+  <section id="quienes-somos" class="quienes-somos-section fade-in">
+    <div class="quienes-content">
+      <div class="quienes-text animate-fade-up" style="animation-delay:0.1s">
+        <h2>
+          ¿Quiénes somos?
+          <span class="linea-dorada"></span>
+        </h2>
+        <p>
+          <strong>Integra Arquitectos Laguirre</strong> es una firma mexicana dedicada al desarrollo integral de proyectos arquitectónicos, ejecutivos e industriales. Nos especializamos en ofrecer soluciones personalizadas que combinan innovación, funcionalidad, eficiencia y estética.<br><br>
+          Nuestro equipo multidisciplinario está conformado por arquitectos, ingenieros y especialistas comprometidos con la excelencia, la creatividad y el uso de tecnologías de vanguardia. Contamos con una amplia experiencia en el diseño y la construcción de espacios residenciales, comerciales, industriales e institucionales, adaptándonos siempre a las necesidades y expectativas de cada cliente.<br><br>
+          Nos caracteriza una gestión transparente, la atención al detalle y la puntualidad en cada etapa del proceso constructivo. Creemos que cada proyecto es una oportunidad para crear valor, transformar entornos y contribuir al bienestar de las personas.<br><br>
+          En Integra Arquitectos Laguirre acompañamos a nuestros clientes desde la concepción de la idea, la planificación, la ejecución y hasta la entrega final, ofreciendo además consultoría, supervisión técnica y asesoría especializada. Nuestra misión es transformar ideas en realidades sólidas y sostenibles, bajo un enfoque de responsabilidad social y compromiso ambiental.
+        </p>
+      </div>
+      <div class="quienes-image animate-fade-up" style="animation-delay:0.3s">
+        <img src="./img/arquitecto.jpg" alt="Arquitecto trabajando">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICIOS ===== -->
+  <section id="servicios" class="servicios-section fade-in">
+    <div class="servicios-overlay"></div>
+    <div class="servicios-container">
+
+      <h2 class="servicios-title animate-fade-up">Nuestros Servicios</h2>
+
+      <!-- Servicio 1 -->
+      <div class="servicio-bloque">
+        <div class="servicio-text animate-fade-up" style="animation-delay:0.1s">
+          <h3>Proyectos Arquitectónicos y Ejecución de Obra</h3>
+          <p>
+            Desarrollo integral de proyectos arquitectónicos, desde la conceptualización y el diseño hasta la ejecución de obra nueva, remodelaciones y ampliaciones en todo tipo de edificaciones. Integramos funcionalidad, estética y eficiencia técnica, gestionando permisos y visualizaciones 3D para comunicar cada propuesta de manera efectiva.
+          </p>
+        </div>
+        <div class="servicio-img animate-fade-up" style="animation-delay:0.2s">
+          <img src="./img/obras.jpg" alt="Proyecto arquitectónico">
+        </div>
+      </div>
+
+      <!-- Servicio 2 -->
+      <div class="servicio-bloque">
+        <div class="servicio-text animate-fade-up" style="animation-delay:0.1s">
+          <h3>Construcción, Supervisión y Gestión de Obra</h3>
+          <p>
+            Construcción de obras civiles e industriales bajo los más altos estándares de calidad. Supervisión técnica en sitio, control de materiales, administración de tiempos y presupuestos, asegurando entregas puntuales y óptimas para cada cliente. Incluye obtención de licencias y permisos, así como la gestión integral de proyectos.
+          </p>
+        </div>
+        <div class="servicio-img animate-fade-up" style="animation-delay:0.2s">
+          <img src="./img/construccion.jpg" alt="Supervisión de obra">
+        </div>
+      </div>
+
+      <!-- Servicio 3 -->
+      <div class="servicio-bloque">
+        <div class="servicio-text animate-fade-up" style="animation-delay:0.1s">
+          <h3>Comercialización y Arrendamiento de Materiales y Maquinaria</h3>
+          <p>
+            Importación, exportación, compra, venta y renta de materiales, herramientas y maquinaria ligera y pesada para la construcción. Ofrecemos soluciones integrales en logística, almacenamiento y transporte, asegurando la disponibilidad y calidad de los insumos para cada proyecto.
+          </p>
+        </div>
+        <div class="servicio-img animate-fade-up" style="animation-delay:0.2s">
+          <img src="./img/maquinaria.jpg" alt="Maquinaria de construcción">
+        </div>
+      </div>
+
+      <!-- Servicio 4 -->
+      <div class="servicio-bloque">
+        <div class="servicio-text animate-fade-up" style="animation-delay:0.1s">
+          <h3>Consultoría y Asesoría Técnica Especializada</h3>
+          <p>
+            Servicios de consultoría y asesoría técnica en arquitectura, ingeniería y construcción. Incluye estudios, análisis de mercado, evaluación de riesgos, elaboración de programas de obra, planeación, obtención de licencias, trámites y especificaciones técnicas.
+          </p>
+        </div>
+        <div class="servicio-img animate-fade-up" style="animation-delay:0.2s">
+          <img src="./img/consultoria.jpg" alt="Consultoría técnica">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== PROYECTOS (VIDEO DE FONDO) ===== -->
+  <section id="proyectos" class="proyectos-section fade-in">
+    <!-- Video de fondo -->
+    <video autoplay loop muted playsinline class="proyectos-bg-video">
+      <source src="./img/oficina.mp4" type="video/mp4">
+      Tu navegador no soporta el video de fondo.
+    </video>
+    <div class="proyectos-overlay"></div>
+    <div class="proyectos-container">
+      <h2 class="proyectos-title animate-fade-up">Proyectos Destacados</h2>
+      <p class="proyectos-desc animate-fade-up" style="animation-delay:.1s">
+        Conoce algunos de los proyectos más representativos en los que hemos participado, abarcando desde edificaciones residenciales y comerciales hasta obras industriales y urbanas.
+      </p>
+      <div class="proyectos-grid">
+        <!-- Proyecto 1 -->
+        <div class="proyecto-card animate-fade-up" style="animation-delay:.12s">
+          <div class="proyecto-img">
+            <img src="./img/residencial.jpg" alt="Proyecto Residencial">
+          </div>
+          <div class="proyecto-info">
+            <h3>Residencial Los Encinos</h3>
+            <p>Desarrollo de conjunto habitacional de 12 casas con enfoque en diseño sustentable, eficiencia energética y espacios funcionales.</p>
+          </div>
+        </div>
+        <!-- Proyecto 2 -->
+        <div class="proyecto-card animate-fade-up" style="animation-delay:.16s">
+          <div class="proyecto-img">
+            <img src="./img/edificio.jpg" alt="Edificio Corporativo">
+          </div>
+          <div class="proyecto-info">
+            <h3>Edificio Corporativo Altum</h3>
+            <p>Construcción de oficinas de alto nivel con sistemas inteligentes de iluminación, ventilación y control de acceso.</p>
+          </div>
+        </div>
+        <!-- Proyecto 3 -->
+        <div class="proyecto-card animate-fade-up" style="animation-delay:.2s">
+          <div class="proyecto-img">
+            <img src="./img/nave.jpg" alt="Nave Industrial">
+          </div>
+          <div class="proyecto-info">
+            <h3>Nave Industrial TecPark</h3>
+            <p>Diseño y ejecución de nave industrial para manufactura ligera, incluyendo áreas de carga, descarga y oficinas administrativas.</p>
+          </div>
+        </div>
+        <!-- Proyecto 4 -->
+        <div class="proyecto-card animate-fade-up" style="animation-delay:.24s">
+          <div class="proyecto-img">
+            <img src="./img/restaurante.jpg" alt="Restaurante Gourmet">
+          </div>
+          <div class="proyecto-info">
+            <h3>Restaurante Gourmet Marea</h3>
+            <p>Remodelación y ambientación de restaurante, integración de materiales naturales y diseño de iluminación escénica.</p>
+          </div>
+        </div>
+        <!-- Proyecto 5 -->
+        <div class="proyecto-card animate-fade-up" style="animation-delay:.28s">
+          <div class="proyecto-img">
+            <img src="./img/parque.jpg" alt="Espacio Urbano">
+          </div>
+          <div class="proyecto-info">
+            <h3>Rehabilitación Parque Urbano</h3>
+            <p>Mejoramiento de áreas verdes, creación de andadores, mobiliario y espacios recreativos para la convivencia social.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-section fade-in">
+  <div class="stats-container">
+    <div class="stat-block animate-fade-up">
+      <span class="counter" data-goal="50">0</span>
+      <span class="stat-label">Proyectos ejecutados</span>
+    </div>
+    <div class="stat-block animate-fade-up" style="animation-delay:0.1s">
+      <span class="counter" data-goal="15">0</span>
+      <span class="stat-label">Años de experiencia</span>
+    </div>
+    <div class="stat-block animate-fade-up" style="animation-delay:0.2s">
+      <span class="counter" data-goal="100">0</span>
+      <span class="stat-label">Clientes satisfechos</span>
+    </div>
+  </div>
+</section>
+
+
   <!-- ===== CONTACTO ===== -->
-  <section id="contacto" class="fade-in">
+  <section id="contacto" class="contacto-section fade-in">
     <div class="container">
       <h2>Contacto</h2>
       <form>
