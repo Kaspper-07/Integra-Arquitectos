@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   revealOnScroll();
 });
 
-// ========== CONTADOR ANIMADO con "+" ==========
+// ========== CONTADOR ANIMADO ==========
 function animateCounter(el, value, duration = 1400) {
   let start = 0;
   let startTime = null;
@@ -50,19 +50,25 @@ function activateCountersWhenVisible() {
 }
 document.addEventListener('DOMContentLoaded', activateCountersWhenVisible);
 
-// ========== BLUEPRINT NAVBAR ANIMADO CON ESCALÍMETRO ==========
+// ========== BLUEPRINT NAVBAR ANIMADO (sin parpadeos) ==========
 function animateBlueprintNavbar() {
   const canvas = document.getElementById('navbar-blueprint');
   const nav = document.querySelector('.main-header');
   if (!canvas || !nav) return;
-  const navHeight = nav.offsetHeight; // Toma el alto real del header
+
+  // Solo redimensiona el canvas si el tamaño cambió (NO en cada frame)
+  const navHeight = nav.offsetHeight;
   const dpr = window.devicePixelRatio || 1;
   const width = window.innerWidth * dpr;
   const height = navHeight * dpr;
-  canvas.width = width;
-  canvas.height = height;
-  canvas.style.width = window.innerWidth + "px";
-  canvas.style.height = navHeight + "px";
+
+  if (canvas.width !== width || canvas.height !== height) {
+    canvas.width = width;
+    canvas.height = height;
+    canvas.style.width = window.innerWidth + "px";
+    canvas.style.height = navHeight + "px";
+  }
+
   const ctx = canvas.getContext('2d');
   ctx.setTransform(1, 0, 0, 1, 0, 0);
   ctx.scale(dpr, dpr);
@@ -115,7 +121,6 @@ function animateBlueprintNavbar() {
   // Escalímetro animado (regla técnica)
   const rulerY = navHeight - 24;
   const step = 24;
-  // Línea principal del escalímetro
   ctx.beginPath();
   ctx.moveTo(30, rulerY);
   ctx.lineTo(window.innerWidth - 30, rulerY);
@@ -158,30 +163,33 @@ window.addEventListener('DOMContentLoaded', animateBlueprintNavbar);
 document.addEventListener("DOMContentLoaded", () => {
   const el = document.querySelector('.hero-title-main');
   if (el) {
+    // Si quieres un efecto typewriter solo con spans:
     const spans = el.querySelectorAll('span');
-    let outerIndex = 0, innerIndex = 0;
-    function typeLine() {
-      if (outerIndex < spans.length) {
-        const text = spans[outerIndex].dataset.text || spans[outerIndex].innerText;
-        spans[outerIndex].innerText = '';
-        function typeChar() {
-          if (innerIndex < text.length) {
-            spans[outerIndex].innerText += text[innerIndex];
-            innerIndex++;
-            setTimeout(typeChar, 35);
-          } else {
-            innerIndex = 0;
-            outerIndex++;
-            setTimeout(typeLine, 200);
+    if (spans.length) {
+      let outerIndex = 0, innerIndex = 0;
+      function typeLine() {
+        if (outerIndex < spans.length) {
+          const text = spans[outerIndex].dataset.text || spans[outerIndex].innerText;
+          spans[outerIndex].innerText = '';
+          function typeChar() {
+            if (innerIndex < text.length) {
+              spans[outerIndex].innerText += text[innerIndex];
+              innerIndex++;
+              setTimeout(typeChar, 35);
+            } else {
+              innerIndex = 0;
+              outerIndex++;
+              setTimeout(typeLine, 200);
+            }
           }
+          typeChar();
+        } else {
+          el.style.borderRight = 'none';
         }
-        typeChar();
-      } else {
-        el.style.borderRight = 'none';
       }
+      spans.forEach(s => { s.dataset.text = s.innerText; });
+      typeLine();
     }
-    spans.forEach(s => { s.dataset.text = s.innerText; });
-    typeLine();
   }
 });
 
@@ -198,3 +206,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+// ========== NAVBAR STICKY + SCROLLED ==========
+window.addEventListener('scroll', () => {
+  document.querySelector('.main-header')
+    .classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// ========== SCROLL-SPY (menú activo según sección) ==========
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-list-wide a');
+const spy = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const id = entry.target.getAttribute('id');
+    const link = document.querySelector(`.nav-list-wide a[href*="${id}"]`);
+    if (entry.isIntersecting) {
+      navLinks.forEach(a => a.classList.remove('active'));
+      link && link.classList.add('active');
+    }
+  });
+}, { threshold: 0.6 });
+sections.forEach(sec => spy.observe(sec));
