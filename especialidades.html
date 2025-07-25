@@ -1,115 +1,268 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Descubre las especialidades de Integra Arquitectos Laguirre: arquitectura residencial, comercial, industrial, remodelaciones y más. Excelencia, innovación y atención personalizada para tu proyecto." />
-  <title>Especialidades | Integra Arquitectos Laguirre</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-  <!-- Para navegadores modernos -->
-<link rel="icon" type="image/png" href="./img/logo-integra.png" sizes="32x32" />
-<!-- Alternativo para máxima compatibilidad -->
-<link rel="shortcut icon" href="./img/logo-integra.png" type="image/png" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Descubre las especialidades de Integra Arquitectos Laguirre: arquitectura residencial, comercial, industrial, remodelaciones y más. Excelencia, innovación y atención personalizada para tu proyecto."
+    />
+    <title>Especialidades | Integra Arquitectos Laguirre</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Para navegadores modernos -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="./img/logo-integra.png"
+      sizes="32x32"
+    />
+    <!-- Alternativo para máxima compatibilidad -->
+    <link rel="shortcut icon" href="./img/logo-integra.png" type="image/png" />
+  </head>
+  <body>
+    <!-- ===== NAVBAR ===== -->
+    <header class="main-header">
+      <canvas id="navbar-blueprint"></canvas>
+      <nav class="navbar-wide">
+        <div class="nav-logo">
+          <a href="index.html"
+            ><img
+              src="./img/logo-integra.png"
+              alt="Integra Arquitectos Laguirre"
+          /></a>
+        </div>
+        <ul class="nav-list-wide">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html#quienes-somos">Quiénes somos</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li>
+            <a href="especialidades.html" class="active">Especialidades</a>
+          </li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+        <button
+          class="hamburger-toggle"
+          id="hamburger-toggle"
+          aria-label="Abrir menú"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </header>
 
-  <!-- ===== NAVBAR ===== -->
-  <header class="main-header">
-    <canvas id="navbar-blueprint"></canvas>
-    <nav class="navbar-wide">
-      <div class="nav-logo">
-        <a href="index.html"><img src="./img/logo-integra.png" alt="Integra Arquitectos Laguirre" /></a>
-      </div>
-      <ul class="nav-list-wide">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="index.html#quienes-somos">Quiénes somos</a></li>
-        <li><a href="servicios.html">Servicios</a></li>
-        <li><a href="especialidades.html" class="active">Especialidades</a></li>
-        <li><a href="index.html#contacto">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- ===== ACORDEÓN DE ESPECIALIDADES ===== -->
+    <section class="especialidades-acordeon fade-in">
+      <!-- Video de fondo -->
+      <video autoplay muted loop playsinline class="especialidades-video-bg">
+        <source src="./img/oficina.mp4" type="video/mp4" />
+        Tu navegador no soporta el video de fondo.
+      </video>
+      <!-- Overlay para oscurecer -->
+      <div class="especialidades-bg-overlay"></div>
 
-  <!-- ===== ACORDEÓN DE ESPECIALIDADES ===== -->
-  <section class="especialidades-acordeon fade-in">
-    <!-- Video de fondo -->
-    <video autoplay muted loop playsinline class="especialidades-video-bg">
-      <source src="./img/oficina.mp4" type="video/mp4">
-      Tu navegador no soporta el video de fondo.
-    </video>
-    <!-- Overlay para oscurecer -->
-    <div class="especialidades-bg-overlay"></div>
+      <!-- TÍTULO -->
+      <h2 class="especialidades-titulo" style="margin-bottom: 10px">
+        Nuestras Especialidades
+      </h2>
+      <p
+        class="animate-fade-up"
+        style="
+          animation-delay: 0.2s;
+          max-width: 750px;
+          margin: 0 auto 34px auto;
+          text-align: center;
+        "
+      >
+        Experiencia en sectores residencial, comercial, industrial, urbano y
+        consultoría.<br />
+        Integra Arquitectos Laguirre domina cada especialidad con un enfoque
+        personalizado y resultados comprobados.
+      </p>
 
-    <!-- TÍTULO -->
-    <h2 class="especialidades-titulo" style="margin-bottom:10px;">Nuestras Especialidades</h2>
-    <p class="animate-fade-up" style="animation-delay:0.2s; max-width:750px; margin:0 auto 34px auto; text-align:center;">
-      Experiencia en sectores residencial, comercial, industrial, urbano y consultoría.<br>
-      Integra Arquitectos Laguirre domina cada especialidad con un enfoque personalizado y resultados comprobados.
-    </p>
-
-    <!-- Contenido acordeón -->
-    <div class="acordeon-list">
-      <!-- Residencial -->
-      <div class="acordeon-item" tabindex="0">
-        <div class="acordeon-titulo">Arquitectura Residencial</div>
-        <div class="acordeon-contenido">
-          <p>Diseño y ejecución de viviendas unifamiliares, condominios y conjuntos habitacionales, con enfoque en funcionalidad, confort y estilo. Nuestros proyectos residenciales se distinguen por la integración de soluciones innovadoras y el cumplimiento de altos estándares de calidad.</p>
-          <br>
-          <p>Nuestros proyectos residenciales están pensados para mejorar la calidad de vida de las familias, integrando confort, diseño y funcionalidad en cada espacio. Creamos viviendas unifamiliares, condominios y conjuntos habitacionales, atendiendo tanto la estética como la eficiencia energética y la seguridad. Nuestro proceso abarca desde el estudio del terreno y la orientación solar, hasta la selección de materiales, el diseño de interiores y la integración de tecnologías inteligentes. Acompañamos a nuestros clientes desde la concepción de la idea hasta la entrega de la casa terminada, asegurando que cada detalle refleje sus necesidades, aspiraciones y estilo de vida.</p>
+      <!-- Contenido acordeón -->
+      <div class="acordeon-list">
+        <!-- Residencial -->
+        <div class="acordeon-item" tabindex="0">
+          <div class="acordeon-titulo">Arquitectura Residencial</div>
+          <div class="acordeon-contenido">
+            <p>
+              Diseño y ejecución de viviendas unifamiliares, condominios y
+              conjuntos habitacionales, con enfoque en funcionalidad, confort y
+              estilo. Nuestros proyectos residenciales se distinguen por la
+              integración de soluciones innovadoras y el cumplimiento de altos
+              estándares de calidad.
+            </p>
+            <br />
+            <p>
+              Nuestros proyectos residenciales están pensados para mejorar la
+              calidad de vida de las familias, integrando confort, diseño y
+              funcionalidad en cada espacio. Creamos viviendas unifamiliares,
+              condominios y conjuntos habitacionales, atendiendo tanto la
+              estética como la eficiencia energética y la seguridad. Nuestro
+              proceso abarca desde el estudio del terreno y la orientación
+              solar, hasta la selección de materiales, el diseño de interiores y
+              la integración de tecnologías inteligentes. Acompañamos a nuestros
+              clientes desde la concepción de la idea hasta la entrega de la
+              casa terminada, asegurando que cada detalle refleje sus
+              necesidades, aspiraciones y estilo de vida.
+            </p>
+          </div>
+        </div>
+        <!-- Comercial -->
+        <div class="acordeon-item" tabindex="0">
+          <div class="acordeon-titulo">Arquitectura Comercial</div>
+          <div class="acordeon-contenido">
+            <p>
+              Diseño y desarrollo de oficinas, locales y centros comerciales,
+              enfocados en la funcionalidad, imagen de marca y experiencia del
+              cliente.
+            </p>
+            <br />
+            <p>
+              En Integra Arquitectos Laguirre entendemos que los espacios
+              comerciales deben ser funcionales, atractivos y alineados con la
+              imagen corporativa de cada empresa. Diseñamos y ejecutamos
+              proyectos de oficinas, locales y centros comerciales que potencian
+              la eficiencia operativa, la experiencia del cliente y el éxito del
+              negocio. Analizamos el flujo de personas, la iluminación, la
+              flexibilidad de los espacios y la integración tecnológica para
+              crear ambientes que impulsan la productividad y refuerzan la
+              identidad de marca. Nuestro equipo trabaja de la mano con los
+              clientes para ofrecer soluciones personalizadas que maximizan el
+              valor de su inversión y permiten adaptarse a las tendencias
+              cambiantes del mercado comercial.
+            </p>
+          </div>
+        </div>
+        <!-- Industrial -->
+        <div class="acordeon-item" tabindex="0">
+          <div class="acordeon-titulo">Arquitectura Industrial</div>
+          <div class="acordeon-contenido">
+            <p>
+              Planeación, diseño y ejecución de naves industriales, almacenes,
+              plantas y centros logísticos. Proyectos eficientes, seguros y
+              adaptados a las necesidades del sector.
+            </p>
+            <br />
+            <p>
+              Desarrollamos proyectos industriales de alta complejidad,
+              incluyendo naves, plantas de manufactura, almacenes y centros
+              logísticos. Nuestro enfoque integral combina el análisis de
+              procesos productivos, la optimización de espacios y el
+              cumplimiento de normativas de seguridad e higiene industrial.
+              Utilizamos metodologías avanzadas para diseñar instalaciones
+              eficientes, seguras y adaptadas a los requerimientos técnicos de
+              cada sector, considerando desde la infraestructura eléctrica y
+              sanitaria, hasta la conectividad y automatización de procesos.
+              Nuestra experiencia nos permite entregar soluciones robustas que
+              contribuyen al crecimiento y competitividad de la industria
+              mexicana.
+            </p>
+          </div>
+        </div>
+        <!-- Urbano -->
+        <div class="acordeon-item" tabindex="0">
+          <div class="acordeon-titulo">Arquitectura Urbana</div>
+          <div class="acordeon-contenido">
+            <p>
+              Rehabilitación y diseño de espacios públicos: parques, plazas,
+              jardines y zonas de convivencia, con enfoque en sostenibilidad y
+              bienestar social.
+            </p>
+            <br />
+            <p>
+              La transformación y rehabilitación de espacios urbanos es una de
+              nuestras pasiones. Participamos en proyectos de diseño y
+              renovación de parques, jardines, plazas y áreas públicas,
+              priorizando la sostenibilidad ambiental y el desarrollo social.
+              Nuestro equipo incorpora criterios de movilidad, accesibilidad,
+              integración paisajística y respeto al entorno natural y
+              construido. Buscamos crear lugares de convivencia y esparcimiento
+              que promuevan el bienestar comunitario, fomenten la inclusión y
+              refuercen el sentido de pertenencia entre los habitantes. En cada
+              proyecto urbano, trabajamos con visión a largo plazo y
+              sensibilidad hacia las necesidades presentes y futuras de la
+              sociedad.
+            </p>
+          </div>
+        </div>
+        <!-- Consultoría -->
+        <div class="acordeon-item" tabindex="0">
+          <div class="acordeon-titulo">Consultoría y Supervisión Técnica</div>
+          <div class="acordeon-contenido">
+            <p>
+              Asesoría, análisis de factibilidad, gestión de permisos, estudios
+              y supervisión de obras civiles, arquitectónicas e industriales.
+            </p>
+            <br />
+            <p>
+              Ofrecemos servicios de consultoría y supervisión técnica que
+              acompañan a nuestros clientes durante todas las fases de sus
+              proyectos. Desde el análisis de factibilidad, estudios de impacto
+              ambiental y planeación estratégica, hasta la revisión de
+              especificaciones técnicas y la supervisión en sitio, aseguramos el
+              cumplimiento de normativas, estándares de calidad y metas de cada
+              proyecto. Nuestro enfoque es brindar orientación experta, detectar
+              áreas de mejora y anticipar posibles riesgos, proporcionando
+              soluciones claras y prácticas para una ejecución eficiente y
+              exitosa. La transparencia, la comunicación y la profesionalidad
+              son la base de nuestro trabajo en consultoría.
+            </p>
+          </div>
         </div>
       </div>
-      <!-- Comercial -->
-      <div class="acordeon-item" tabindex="0">
-        <div class="acordeon-titulo">Arquitectura Comercial</div>
-        <div class="acordeon-contenido">
-          <p>Diseño y desarrollo de oficinas, locales y centros comerciales, enfocados en la funcionalidad, imagen de marca y experiencia del cliente.</p>
-          <br>
-          <p>En Integra Arquitectos Laguirre entendemos que los espacios comerciales deben ser funcionales, atractivos y alineados con la imagen corporativa de cada empresa. Diseñamos y ejecutamos proyectos de oficinas, locales y centros comerciales que potencian la eficiencia operativa, la experiencia del cliente y el éxito del negocio. Analizamos el flujo de personas, la iluminación, la flexibilidad de los espacios y la integración tecnológica para crear ambientes que impulsan la productividad y refuerzan la identidad de marca. Nuestro equipo trabaja de la mano con los clientes para ofrecer soluciones personalizadas que maximizan el valor de su inversión y permiten adaptarse a las tendencias cambiantes del mercado comercial.</p>
-        </div>
-      </div>
-      <!-- Industrial -->
-      <div class="acordeon-item" tabindex="0">
-        <div class="acordeon-titulo">Arquitectura Industrial</div>
-        <div class="acordeon-contenido">
-          <p>Planeación, diseño y ejecución de naves industriales, almacenes, plantas y centros logísticos. Proyectos eficientes, seguros y adaptados a las necesidades del sector.</p>
-          <br>
-          <p>Desarrollamos proyectos industriales de alta complejidad, incluyendo naves, plantas de manufactura, almacenes y centros logísticos. Nuestro enfoque integral combina el análisis de procesos productivos, la optimización de espacios y el cumplimiento de normativas de seguridad e higiene industrial. Utilizamos metodologías avanzadas para diseñar instalaciones eficientes, seguras y adaptadas a los requerimientos técnicos de cada sector, considerando desde la infraestructura eléctrica y sanitaria, hasta la conectividad y automatización de procesos. Nuestra experiencia nos permite entregar soluciones robustas que contribuyen al crecimiento y competitividad de la industria mexicana.</p>
-        </div>
-      </div>
-      <!-- Urbano -->
-      <div class="acordeon-item" tabindex="0">
-        <div class="acordeon-titulo">Arquitectura Urbana</div>
-        <div class="acordeon-contenido">
-          <p>Rehabilitación y diseño de espacios públicos: parques, plazas, jardines y zonas de convivencia, con enfoque en sostenibilidad y bienestar social.</p>
-          <br>
-          <p>La transformación y rehabilitación de espacios urbanos es una de nuestras pasiones. Participamos en proyectos de diseño y renovación de parques, jardines, plazas y áreas públicas, priorizando la sostenibilidad ambiental y el desarrollo social. Nuestro equipo incorpora criterios de movilidad, accesibilidad, integración paisajística y respeto al entorno natural y construido. Buscamos crear lugares de convivencia y esparcimiento que promuevan el bienestar comunitario, fomenten la inclusión y refuercen el sentido de pertenencia entre los habitantes. En cada proyecto urbano, trabajamos con visión a largo plazo y sensibilidad hacia las necesidades presentes y futuras de la sociedad.</p>
-        </div>
-      </div>
-      <!-- Consultoría -->
-      <div class="acordeon-item" tabindex="0">
-        <div class="acordeon-titulo">Consultoría y Supervisión Técnica</div>
-        <div class="acordeon-contenido">
-          <p>Asesoría, análisis de factibilidad, gestión de permisos, estudios y supervisión de obras civiles, arquitectónicas e industriales.</p>
-          <br>
-          <p>Ofrecemos servicios de consultoría y supervisión técnica que acompañan a nuestros clientes durante todas las fases de sus proyectos. Desde el análisis de factibilidad, estudios de impacto ambiental y planeación estratégica, hasta la revisión de especificaciones técnicas y la supervisión en sitio, aseguramos el cumplimiento de normativas, estándares de calidad y metas de cada proyecto. Nuestro enfoque es brindar orientación experta, detectar áreas de mejora y anticipar posibles riesgos, proporcionando soluciones claras y prácticas para una ejecución eficiente y exitosa. La transparencia, la comunicación y la profesionalidad son la base de nuestro trabajo en consultoría.</p>
-        </div>
-      </div>
-    </div>
 
-    <!-- Llamado a acción final -->
-    <div style="text-align:center;margin-top:24px;margin-bottom:0;">
-  <a href="index.html#contacto" class="hero-btn">Solicita información o cotización</a>
-</div>
+      <!-- Llamado a acción final -->
+      <div style="text-align: center; margin-top: 24px; margin-bottom: 0">
+        <a href="index.html#contacto" class="hero-btn"
+          >Solicita información o cotización</a
+        >
+      </div>
+    </section>
 
-  </section>
+    <footer class="fade-in">
+      <div class="container">
+        <!-- Correo -->
+        <p style="font-size: 1.05rem; margin-bottom: 8px">
+          <a
+            href="mailto:administracion@laguirre.com.mx"
+            style="color: #fff; text-decoration: none"
+          >
+            administracion@laguirre.com.mx
+          </a>
+        </p>
 
-  <footer class="fade-in">
-    <div class="container">
-      <p>&copy; 2025 Integra Arquitectos Laguirre. Todos los derechos reservados.</p>
-    </div>
-  </footer>
+        <!-- Redes sociales -->
+        <div style="margin-bottom: 8px">
+          <svg width="42" height="42" fill="#ffffff" viewBox="0 0 30 30">
+            <circle cx="15" cy="15" r="9" stroke="none" fill="none" />
+            <path
+              d="M19.25 8h-8.5A2.75 2.75 0 0 0 8 10.75v8.5A2.75 2.75 0 0 0 10.75 22h8.5A2.75 2.75 0 0 0 22 19.25v-8.5A2.75 2.75 0 0 0 19.25 8zM20.5 19.25a1.25 1.25 0 0 1-1.25 1.25h-8.5a1.25 1.25 0 0 1-1.25-1.25v-8.5a1.25 1.25 0 0 1 1.25-1.25h8.5a1.25 1.25 0 0 1 1.25 1.25v8.5z"
+            />
+            <circle cx="15" cy="15" r="3.25" stroke="#fff" stroke-width="1.5" />
+            <circle cx="19" cy="11" r="0.8" fill="#fff" />
+          </svg>
+          <svg width="42" height="42" fill="#ffffff" viewBox="0 0 30 30">
+            <path
+              d="M11.56 21h-2.8V12.04h2.8V21zM10.16 10.8c-.87 0-1.44-.58-1.44-1.32 0-.75.59-1.31 1.47-1.31.89 0 1.44.56 1.45 1.31 0 .74-.56 1.32-1.47 1.32zm3.65 10.2h2.79V16c0-.26.02-.51.1-.69.22-.51.72-1.03 1.56-1.03 1.1 0 1.54.77 1.54 1.89v4.82h2.79V15.7c0-2.86-1.53-4.19-3.57-4.19-1.65 0-2.39.92-2.8 1.56v.01h-.02c.01-.02.02-.04.02-.06V12.04h-2.8c.04.81 0 8.96 0 8.96z"
+            />
+          </svg>
+        </div>
 
-  <script src="main.js"></script>
-</body>
+        <!-- Copyright -->
+        <p style="font-size: 0.95rem">
+          &copy; 2024 Integra Arquitectos Laguirre. Todos los derechos
+          reservados.
+        </p>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
 </html>

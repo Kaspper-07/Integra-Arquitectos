@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   window.addEventListener('scroll', revealOnScroll);
   revealOnScroll();
+
+  
 });
 
 // ========== CONTADOR ANIMADO ==========
@@ -83,7 +85,7 @@ function animateBlueprintNavbar() {
     ctx.beginPath();
     ctx.moveTo(0, y);
     ctx.lineTo(window.innerWidth, y);
-    ctx.strokeStyle = `rgba(200, 169, 112, ${alpha})`;
+    ctx.strokeStyle = `rgba(255, 255, 255, ${alpha})`;
     ctx.lineWidth = 1.1;
     ctx.setLineDash([10, 12]);
     ctx.stroke();
@@ -96,7 +98,7 @@ function animateBlueprintNavbar() {
     ctx.beginPath();
     ctx.moveTo(x, 0);
     ctx.lineTo(x, navHeight);
-    ctx.strokeStyle = `rgba(200, 169, 112, ${alpha})`;
+    ctx.strokeStyle = `rgba(255, 255, 255, ${alpha})`;
     ctx.lineWidth = 1.05;
     ctx.setLineDash([7, 12]);
     ctx.stroke();
@@ -111,7 +113,7 @@ function animateBlueprintNavbar() {
     let alpha = 0.12 + 0.20 * Math.abs(Math.cos(t * 1.1 + i));
     ctx.beginPath();
     ctx.arc(cx, cy, pulse, 0, 2 * Math.PI);
-    ctx.strokeStyle = `rgba(200, 169, 112, ${alpha})`;
+    ctx.strokeStyle = `rgba(255, 255, 255, ${alpha})`;
     ctx.lineWidth = 1.5;
     ctx.globalAlpha = alpha;
     ctx.stroke();
@@ -124,10 +126,10 @@ function animateBlueprintNavbar() {
   ctx.beginPath();
   ctx.moveTo(30, rulerY);
   ctx.lineTo(window.innerWidth - 30, rulerY);
-  ctx.strokeStyle = "rgba(200, 169, 112, 0.44)";
+  ctx.strokeStyle = "rgba(255, 255, 255, 0.44)";
   ctx.lineWidth = 2.3;
   ctx.setLineDash([]);
-  ctx.shadowColor = "rgba(200, 169, 112, 0.25)";
+  ctx.shadowColor = "rgba(255, 255, 255, 0.25)";
   ctx.shadowBlur = 4;
   ctx.stroke();
   ctx.shadowBlur = 0;
@@ -139,14 +141,14 @@ function animateBlueprintNavbar() {
     ctx.beginPath();
     ctx.moveTo(x, rulerY);
     ctx.lineTo(x, rulerY - tall * ani);
-    ctx.strokeStyle = "rgba(200, 169, 112, 0.38)";
+    ctx.strokeStyle = "rgba(255, 255, 255, 0.38)";
     ctx.lineWidth = (x / step) % 5 === 0 ? 2.1 : 1.2;
     ctx.stroke();
   }
 
   // Numeritos de escala (cada 5 marcas)
   ctx.font = "11px monospace";
-  ctx.fillStyle = "rgba(200, 169, 112, 0.40)";
+  ctx.fillStyle = "rgba(255, 255, 255, 0.40)";
   for (let x = 30, k = 0; x < window.innerWidth - 30; x += step) {
     if ((x / step) % 5 === 0) {
       ctx.fillText(`${k * 5}`, x - 7, rulerY + 17);
@@ -227,3 +229,22 @@ const spy = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.6 });
 sections.forEach(sec => spy.observe(sec));
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("hamburger-toggle");
+  const menu = document.querySelector(".nav-list-wide");
+
+  if (toggle && menu) {
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("open");
+    });
+
+    // Cerrar el menú al hacer clic en un enlace
+    menu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        menu.classList.remove("open");
+      });
+    });
+  }
+});

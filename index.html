@@ -1,180 +1,328 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Integra Arquitectos Laguirre es una firma mexicana especializada en arquitectura, ingeniería y construcción. Ofrecemos servicios integrales con excelencia, innovación y ética profesional para todo tipo de proyectos residenciales, comerciales e industriales en Ciudad de México y toda la República." />
-  <title>Integra Arquitectos Laguirre</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-  <!-- Para navegadores modernos -->
-<link rel="icon" type="image/png" href="./img/logo-integra.png" sizes="32x32" />
-<!-- Alternativo para máxima compatibilidad -->
-<link rel="shortcut icon" href="./img/logo-integra.png" type="image/png" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Integra Arquitectos Laguirre es una firma mexicana especializada en arquitectura, ingeniería y construcción. Ofrecemos servicios integrales con excelencia, innovación y ética profesional para todo tipo de proyectos residenciales, comerciales e industriales en Ciudad de México y toda la República."
+    />
+    <title>Integra Arquitectos Laguirre</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Para navegadores modernos -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="./img/logo-integra.png"
+      sizes="32x32"
+    />
+    <!-- Alternativo para máxima compatibilidad -->
+    <link rel="shortcut icon" href="./img/logo-integra.png" type="image/png" />
+  </head>
+  <body>
+    <!-- ===== NAVBAR ===== -->
+    <header class="main-header">
+      <canvas id="navbar-blueprint"></canvas>
+      <nav class="navbar-wide">
+        <div class="nav-logo">
+          <a href="index.html"
+            ><img
+              src="./img/logo-integra.png"
+              alt="Integra Arquitectos Laguirre"
+          /></a>
+        </div>
 
-</head>
-<body>
+        <ul class="nav-list-wide">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="#quienes-somos">Quiénes somos</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="especialidades.html">Especialidades</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <button
+          class="hamburger-toggle"
+          id="hamburger-toggle"
+          aria-label="Abrir menú"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </header>
 
-  <!-- ===== NAVBAR ===== -->
-  <header class="main-header">
-    <canvas id="navbar-blueprint"></canvas>
-    <nav class="navbar-wide">
-      <div class="nav-logo">
-  <a href="index.html"><img src="./img/logo-integra.png" alt="Integra Arquitectos Laguirre" /></a>
-</div>
+    <!-- ===== HERO CON VIDEO Y LÍNEAS BLUEPRINT ===== -->
+    <section class="hero-full">
+      <video id="hero-video" autoplay muted loop playsinline>
+        <source src="./img/fondo-arquitectura.mp4" type="video/mp4" />
+        Tu navegador no soporta video.
+      </video>
+      <div class="hero-overlay"></div>
+      <div class="hero-text-group">
+        <h1 class="hero-title-main">
+          <span>Integra</span> <span>Arquitectos</span> <span>Laguirre</span>
+        </h1>
+        <div class="hero-subtop">
+          Arquitectura, innovación y confianza para tu proyecto
+        </div>
+        <a href="#contacto" class="hero-btn">Contáctanos</a>
+      </div>
+    </section>
 
-      <ul class="nav-list-wide">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="#quienes-somos">Quiénes somos</a></li>
-        <li><a href="servicios.html">Servicios</a></li>
-        <li><a href="especialidades.html">Especialidades</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- ===== QUIÉNES SOMOS ===== -->
+    <section id="quienes-somos" class="quienes-somos-section fade-in">
+      <div class="quienes-content">
+        <div class="quienes-text animate-fade-up" style="animation-delay: 0.1s">
+          <h2>
+            ¿Quiénes somos?
+            <span class="linea-dorada"></span>
+          </h2>
+          <p>
+            <strong>Integra Arquitectos Laguirre</strong> es una firma mexicana
+            de arquitectura e ingeniería fundada sobre los principios de
+            excelencia, ética profesional y visión integral de los proyectos.
+            Conformado por un equipo multidisciplinario de arquitectos,
+            ingenieros civiles, diseñadores y especialistas técnicos, nuestro
+            despacho cuenta con amplia experiencia en el diseño, desarrollo y
+            ejecución de proyectos arquitectónicos, ejecutivos e industriales en
+            todo el país.<br /><br />
+            Nos distinguimos por nuestra capacidad de transformar ideas en
+            espacios funcionales, estéticos y sostenibles, adaptándonos a las
+            necesidades específicas de cada cliente, ya sea en proyectos
+            residenciales, comerciales, industriales o institucionales. Desde la
+            planeación y el diseño conceptual, hasta la supervisión y entrega de
+            obra, acompañamos a nuestros clientes en cada etapa, asegurando
+            transparencia, cumplimiento y atención al detalle.<br /><br />
+            La filosofía de Integra Arquitectos Laguirre se basa en la
+            innovación continua, el uso estratégico de tecnologías de vanguardia
+            y la responsabilidad social y ambiental. Creemos que la arquitectura
+            debe contribuir positivamente al entorno, mejorar la calidad de vida
+            y ofrecer soluciones que respondan tanto a las tendencias actuales
+            como a los retos del futuro.<br /><br />
+            Nuestra misión es brindar un servicio integral, honesto y
+            profesional, donde cada proyecto represente una oportunidad para
+            superar expectativas, crear valor y fortalecer relaciones de
+            confianza a largo plazo. La satisfacción de nuestros clientes es el
+            motor que impulsa cada una de nuestras acciones, por ello, nos
+            comprometemos a ofrecer consultoría, supervisión técnica y asesoría
+            personalizada, garantizando resultados sólidos y sostenibles.<br /><br />
+            En Integra Arquitectos Laguirre trabajamos con pasión y compromiso,
+            convencidos de que la calidad, la creatividad y la experiencia son
+            los pilares que nos distinguen como líderes en el sector de la
+            construcción y el diseño arquitectónico en México.
+          </p>
+        </div>
+        <div
+          class="quienes-image animate-fade-up"
+          style="animation-delay: 0.3s"
+        >
+          <img src="./img/arquitecto.jpg" alt="Arquitecto trabajando" />
+        </div>
+      </div>
+    </section>
 
-  <!-- ===== HERO CON VIDEO Y LÍNEAS BLUEPRINT ===== -->
-  <section class="hero-full">
-  <video id="hero-video" autoplay muted loop playsinline>
-    <source src="./img/fondo-arquitectura.mp4" type="video/mp4">
-    Tu navegador no soporta video.
-  </video>
-  <div class="hero-overlay"></div>
-  <div class="hero-text-group">
-    <h1 class="hero-title-main">
-  <span>Integra</span> <span>Arquitectos</span> <span>Laguirre</span>
-</h1>
-    <div class="hero-subtop">Arquitectura, innovación y confianza para tu proyecto</div>
-    <a href="#contacto" class="hero-btn">Contáctanos</a>
-  </div>
-</section>
+    <!-- ===== RESUMEN SERVICIOS ===== -->
+    <section class="servicios-section fade-in" style="min-height: 420px">
+      <div class="servicios-overlay"></div>
+      <div class="servicios-container" style="text-align: center">
+        <h2 class="servicios-title animate-fade-up">Nuestros Servicios</h2>
+        <p
+          class="animate-fade-up"
+          style="
+            animation-delay: 0.2s;
+            max-width: 750px;
+            margin: 0 auto 34px auto;
+          "
+        >
+          Ofrecemos una gama completa de servicios profesionales que abarcan
+          desde el diseño arquitectónico y la ejecución de obra, hasta
+          consultoría técnica, supervisión de proyectos y comercialización de
+          materiales y maquinaria.
+          <br /><br />
+          Descubre todo lo que podemos hacer por tu proyecto:
+        </p>
+        <a href="servicios.html" class="hero-btn" style="margin-top: 16px"
+          >Ver todos los servicios</a
+        >
+      </div>
+    </section>
 
-  <!-- ===== QUIÉNES SOMOS ===== -->
-  <section id="quienes-somos" class="quienes-somos-section fade-in">
-    <div class="quienes-content">
-      <div class="quienes-text animate-fade-up" style="animation-delay:0.1s">
-        <h2>
-          ¿Quiénes somos?
-          <span class="linea-dorada"></span>
-        </h2>
-        <p>
-          <strong>Integra Arquitectos Laguirre</strong> es una firma mexicana de arquitectura e ingeniería fundada sobre los principios de excelencia, ética profesional y visión integral de los proyectos. Conformado por un equipo multidisciplinario de arquitectos, ingenieros civiles, diseñadores y especialistas técnicos, nuestro despacho cuenta con amplia experiencia en el diseño, desarrollo y ejecución de proyectos arquitectónicos, ejecutivos e industriales en todo el país.<br><br>
-          Nos distinguimos por nuestra capacidad de transformar ideas en espacios funcionales, estéticos y sostenibles, adaptándonos a las necesidades específicas de cada cliente, ya sea en proyectos residenciales, comerciales, industriales o institucionales. Desde la planeación y el diseño conceptual, hasta la supervisión y entrega de obra, acompañamos a nuestros clientes en cada etapa, asegurando transparencia, cumplimiento y atención al detalle.<br><br>
-          La filosofía de Integra Arquitectos Laguirre se basa en la innovación continua, el uso estratégico de tecnologías de vanguardia y la responsabilidad social y ambiental. Creemos que la arquitectura debe contribuir positivamente al entorno, mejorar la calidad de vida y ofrecer soluciones que respondan tanto a las tendencias actuales como a los retos del futuro.<br><br>
-          Nuestra misión es brindar un servicio integral, honesto y profesional, donde cada proyecto represente una oportunidad para superar expectativas, crear valor y fortalecer relaciones de confianza a largo plazo. La satisfacción de nuestros clientes es el motor que impulsa cada una de nuestras acciones, por ello, nos comprometemos a ofrecer consultoría, supervisión técnica y asesoría personalizada, garantizando resultados sólidos y sostenibles.<br><br>
-          En Integra Arquitectos Laguirre trabajamos con pasión y compromiso, convencidos de que la calidad, la creatividad y la experiencia son los pilares que nos distinguen como líderes en el sector de la construcción y el diseño arquitectónico en México.
+    <!-- ===== RESUMEN ESPECIALIDADES ===== -->
+    <section class="especialidades-acordeon fade-in" style="min-height: 420px">
+      <!-- Video de fondo -->
+      <video autoplay muted loop playsinline class="especialidades-video-bg">
+        <source src="./img/oficina.mp4" type="video/mp4" />
+        Tu navegador no soporta el video de fondo.
+      </video>
+      <div class="especialidades-bg-overlay"></div>
+      <h2 class="especialidades-titulo" style="margin-bottom: 10px">
+        Especialidades
+      </h2>
+      <p
+        class="animate-fade-up"
+        style="
+          animation-delay: 0.2s;
+          max-width: 750px;
+          margin: 0 auto 34px auto;
+          text-align: center;
+        "
+      >
+        Experiencia en sectores residencial, comercial, industrial, urbano y
+        consultoría. Integra Arquitectos Laguirre domina cada especialidad con
+        un enfoque personalizado y resultados comprobados.
+      </p>
+      <div style="text-align: center">
+        <a href="especialidades.html" class="hero-btn" style="margin-top: 16px"
+          >Ver especialidades</a
+        >
+      </div>
+    </section>
+
+    <!-- ===== CONTADOR DE CIFRAS ===== -->
+    <section class="contador-section" id="contadores">
+      <div class="contador-container">
+        <div class="contador-card">
+          <div class="contador-numero">
+            <span class="contador-mas">+</span
+            ><span data-valor="50" class="contador-valor">0</span>
+          </div>
+          <div class="contador-label">Proyectos</div>
+        </div>
+        <div class="contador-card">
+          <div class="contador-numero">
+            <span class="contador-mas">+</span
+            ><span data-valor="30" class="contador-valor">0</span>
+          </div>
+          <div class="contador-label">Clientes satisfechos</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACTO ===== -->
+
+    <section id="contacto" class="contacto-section fade-in">
+      <div class="contacto-card">
+        <!-- Izquierda: Mapa + dirección -->
+        <div class="contacto-izq">
+          <div class="contacto-mapa-box">
+            <iframe
+              src="https://www.google.com/maps?q=Prol.+P.+de+la+Reforma+799,+Santa+Fe,+CDMX&output=embed"
+              width="100%"
+              height="150"
+              style="border: 0; border-radius: 10px"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="contacto-dir">
+            <h3>Ciudad de México</h3>
+            <p>
+              Dirección: Prol. P.° de la Reforma 799,<br />
+              Santa Fe, Zedec Sta Fé,<br />
+              Álvaro Obregón, 01219
+            </p>
+          </div>
+        </div>
+
+        <!-- Centro: Separador animado con ícono -->
+        <div class="contacto-separador">
+          <div class="separador-linea"></div>
+          <div class="separador-icono">
+            <!-- Icono simple de compás arquitectónico SVG (puedes cambiarlo por otro) -->
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+              <circle
+                cx="18"
+                cy="18"
+                r="17"
+                stroke="#C8A970"
+                stroke-width="2.3"
+                fill="none"
+              />
+              <path
+                d="M18 9 V27"
+                stroke="#C8A970"
+                stroke-width="2.2"
+                stroke-linecap="round"
+              />
+              <path
+                d="M14 27 L22 27"
+                stroke="#C8A970"
+                stroke-width="2.2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
+          <div class="separador-linea"></div>
+        </div>
+
+        <!-- Derecha: Formulario -->
+        <div class="contacto-der">
+          <h2>Contáctanos</h2>
+          <p>
+            Completa el formulario y nuestro equipo te contactará a la brevedad
+            para asesorarte y ofrecerte una solución a la medida de tus
+            necesidades.
+          </p>
+          <form>
+            <input type="text" name="nombre" placeholder="Tu nombre" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Correo electrónico"
+              required
+            />
+            <textarea
+              name="mensaje"
+              placeholder="Cuéntanos tu proyecto o consulta"
+              required
+            ></textarea>
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="fade-in">
+      <div class="container">
+        <!-- Correo -->
+        <p style="font-size: 1.05rem; margin-bottom: 8px">
+          <a
+            href="mailto:administracion@laguirre.com.mx"
+            style="color: #fff; text-decoration: none"
+          >
+            administracion@laguirre.com.mx
+          </a>
+        </p>
+
+        <!-- Redes sociales -->
+        <div style="margin-bottom: 8px">
+          <svg width="42" height="42" fill="#ffffff" viewBox="0 0 30 30">
+            <circle cx="15" cy="15" r="9" stroke="none" fill="none" />
+            <path
+              d="M19.25 8h-8.5A2.75 2.75 0 0 0 8 10.75v8.5A2.75 2.75 0 0 0 10.75 22h8.5A2.75 2.75 0 0 0 22 19.25v-8.5A2.75 2.75 0 0 0 19.25 8zM20.5 19.25a1.25 1.25 0 0 1-1.25 1.25h-8.5a1.25 1.25 0 0 1-1.25-1.25v-8.5a1.25 1.25 0 0 1 1.25-1.25h8.5a1.25 1.25 0 0 1 1.25 1.25v8.5z"
+            />
+            <circle cx="15" cy="15" r="3.25" stroke="#fff" stroke-width="1.5" />
+            <circle cx="19" cy="11" r="0.8" fill="#fff" />
+          </svg>
+          <svg width="42" height="42" fill="#ffffff" viewBox="0 0 30 30">
+            <path
+              d="M11.56 21h-2.8V12.04h2.8V21zM10.16 10.8c-.87 0-1.44-.58-1.44-1.32 0-.75.59-1.31 1.47-1.31.89 0 1.44.56 1.45 1.31 0 .74-.56 1.32-1.47 1.32zm3.65 10.2h2.79V16c0-.26.02-.51.1-.69.22-.51.72-1.03 1.56-1.03 1.1 0 1.54.77 1.54 1.89v4.82h2.79V15.7c0-2.86-1.53-4.19-3.57-4.19-1.65 0-2.39.92-2.8 1.56v.01h-.02c.01-.02.02-.04.02-.06V12.04h-2.8c.04.81 0 8.96 0 8.96z"
+            />
+          </svg>
+        </div>
+
+        <!-- Copyright -->
+        <p style="font-size: 0.95rem">
+          &copy; 2024 Integra Arquitectos Laguirre. Todos los derechos
+          reservados.
         </p>
       </div>
-      <div class="quienes-image animate-fade-up" style="animation-delay:0.3s">
-        <img src="./img/arquitecto.jpg" alt="Arquitecto trabajando">
-      </div>
-    </div>
-  </section>
+    </footer>
 
-  <!-- ===== RESUMEN SERVICIOS ===== -->
-  <section class="servicios-section fade-in" style="min-height:420px;">
-    <div class="servicios-overlay"></div>
-    <div class="servicios-container" style="text-align:center;">
-      <h2 class="servicios-title animate-fade-up">Nuestros Servicios</h2>
-      <p class="animate-fade-up" style="animation-delay:0.2s; max-width:750px; margin:0 auto 34px auto;">
-        Ofrecemos una gama completa de servicios profesionales que abarcan desde el diseño arquitectónico y la ejecución de obra, hasta consultoría técnica, supervisión de proyectos y comercialización de materiales y maquinaria. 
-        <br><br>
-        Descubre todo lo que podemos hacer por tu proyecto:
-      </p>
-      <a href="servicios.html" class="hero-btn" style="margin-top:16px;">Ver todos los servicios</a>
-    </div>
-  </section>
-
-  <!-- ===== RESUMEN ESPECIALIDADES ===== -->
-  <section class="especialidades-acordeon fade-in" style="min-height:420px;">
-    <!-- Video de fondo -->
-    <video autoplay muted loop playsinline class="especialidades-video-bg">
-      <source src="./img/oficina.mp4" type="video/mp4">
-      Tu navegador no soporta el video de fondo.
-    </video>
-    <div class="especialidades-bg-overlay"></div>
-    <h2 class="especialidades-titulo" style="margin-bottom:10px;">Especialidades</h2>
-    <p class="animate-fade-up" style="animation-delay:0.2s; max-width:750px; margin:0 auto 34px auto; text-align:center;">
-      Experiencia en sectores residencial, comercial, industrial, urbano y consultoría. Integra Arquitectos Laguirre domina cada especialidad con un enfoque personalizado y resultados comprobados.
-    </p>
-    <div style="text-align:center;">
-      <a href="especialidades.html" class="hero-btn" style="margin-top:16px;">Ver especialidades</a>
-    </div>
-  </section>
-
-  <!-- ===== CONTADOR DE CIFRAS ===== -->
-  <section class="contador-section" id="contadores">
-    <div class="contador-container">
-      <div class="contador-card">
-        <div class="contador-numero"><span class="contador-mas">+</span><span data-valor="50" class="contador-valor">0</span></div>
-        <div class="contador-label">Proyectos</div>
-      </div>
-      <div class="contador-card">
-        <div class="contador-numero"><span class="contador-mas">+</span><span data-valor="30" class="contador-valor">0</span></div>
-        <div class="contador-label">Clientes satisfechos</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CONTACTO ===== -->
-
-<section id="contacto" class="contacto-section fade-in">
-  <div class="contacto-card">
-    <!-- Izquierda: Mapa + dirección -->
-    <div class="contacto-izq">
-      <div class="contacto-mapa-box">
-        <iframe
-          src="https://www.google.com/maps?q=Prol.+P.+de+la+Reforma+799,+Santa+Fe,+CDMX&output=embed"
-          width="100%" height="150" style="border:0; border-radius:10px;"
-          allowfullscreen="" loading="lazy"></iframe>
-      </div>
-      <div class="contacto-dir">
-        <h3>Ciudad de México</h3>
-        <p>
-          Dirección: Prol. P.° de la Reforma 799,<br>
-          Santa Fe, Zedec Sta Fé,<br>
-          Álvaro Obregón, 01219
-        </p>
-      </div>
-    </div>
-
-    <!-- Centro: Separador animado con ícono -->
-    <div class="contacto-separador">
-      <div class="separador-linea"></div>
-      <div class="separador-icono">
-        <!-- Icono simple de compás arquitectónico SVG (puedes cambiarlo por otro) -->
-        <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-          <circle cx="18" cy="18" r="17" stroke="#C8A970" stroke-width="2.3" fill="none"/>
-          <path d="M18 9 V27" stroke="#C8A970" stroke-width="2.2" stroke-linecap="round"/>
-          <path d="M14 27 L22 27" stroke="#C8A970" stroke-width="2.2" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <div class="separador-linea"></div>
-    </div>
-
-    <!-- Derecha: Formulario -->
-    <div class="contacto-der">
-      <h2>Contáctanos</h2>
-      <p>
-        Completa el formulario y nuestro equipo te contactará a la brevedad para asesorarte y ofrecerte una solución a la medida de tus necesidades.
-      </p>
-      <form>
-        <input type="text" name="nombre" placeholder="Tu nombre" required>
-        <input type="email" name="email" placeholder="Correo electrónico" required>
-        <textarea name="mensaje" placeholder="Cuéntanos tu proyecto o consulta" required></textarea>
-        <button type="submit">Enviar</button>
-      </form>
-    </div>
-  </div>
-</section>
-
-
-  <footer class="fade-in">
-  <div class="container">
-    <p>&copy; 2025 Integra Arquitectos Laguirre. Todos los derechos reservados.</p>
-  </div>
-</footer>
-
-  <script src="main.js"></script>
-</body>
+    <script src="main.js"></script>
+  </body>
 </html>

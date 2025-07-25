@@ -1,120 +1,257 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Conoce los servicios de Integra Arquitectos Laguirre: diseño arquitectónico, construcción, dirección de obra y supervisión técnica para proyectos residenciales, comerciales e industriales en Ciudad de México." />
-  <title>Servicios | Integra Arquitectos Laguirre</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-  <!-- Para navegadores modernos -->
-<link rel="icon" type="image/png" href="./img/logo-integra.png" sizes="32x32" />
-<!-- Alternativo para máxima compatibilidad -->
-<link rel="shortcut icon" href="./img/logo-integra.png" type="image/png" />
-</head>
-<body>
-
-  <!-- ===== NAVBAR ===== -->
-  <header class="main-header">
-    <canvas id="navbar-blueprint"></canvas>
-    <nav class="navbar-wide">
-      <div class="nav-logo">
-  <a href="index.html"><img src="./img/logo-integra.png" alt="Integra Arquitectos Laguirre" /></a>
-</div>
-
-      <ul class="nav-list-wide">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="index.html#quienes-somos">Quiénes somos</a></li>
-        <li><a href="servicios.html" class="active">Servicios</a></li>
-        <li><a href="especialidades.html">Especialidades</a></li>
-        <li><a href="index.html#contacto">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- ===== SERVICIOS ===== -->
-  <section class="servicios-section fade-in">
-    <div class="servicios-overlay"></div>
-    <div class="servicios-container">
-      <h2 class="servicios-title animate-fade-up">Nuestros Servicios</h2>
-
-      <!-- Servicio 1 -->
-      <div class="servicio-bloque">
-        <div class="servicio-text animate-fade-up" style="animation-delay:0.1s">
-          <h3>Proyectos Arquitectónicos y Ejecución de Obra</h3>
-          <p>Desarrollo integral de proyectos arquitectónicos, desde la conceptualización y el diseño hasta la ejecución de obra nueva, remodelaciones y ampliaciones en todo tipo de edificaciones. Integramos funcionalidad, estética y eficiencia técnica, gestionando permisos y visualizaciones 3D para comunicar cada propuesta de manera efectiva.</p>
-          <br>
-          <p>La creación de espacios va más allá del simple diseño: es un proceso que requiere visión, planeación y una ejecución precisa. En Integra Arquitectos Laguirre, desarrollamos proyectos arquitectónicos desde la idea inicial hasta la obra concluida, integrando creatividad, funcionalidad y eficiencia técnica en cada detalle. Nos ocupamos de gestionar todos los permisos, elaboramos visualizaciones 3D para comunicar la propuesta y ofrecemos soluciones innovadoras adaptadas a las tendencias y necesidades actuales. Nuestro compromiso es entregar obras de alta calidad, optimizando recursos y garantizando la satisfacción total de cada cliente, ya sea en construcciones nuevas, remodelaciones o ampliaciones.</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Conoce los servicios de Integra Arquitectos Laguirre: diseño arquitectónico, construcción, dirección de obra y supervisión técnica para proyectos residenciales, comerciales e industriales en Ciudad de México."
+    />
+    <title>Servicios | Integra Arquitectos Laguirre</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Para navegadores modernos -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="./img/logo-integra.png"
+      sizes="32x32"
+    />
+    <!-- Alternativo para máxima compatibilidad -->
+    <link rel="shortcut icon" href="./img/logo-integra.png" type="image/png" />
+  </head>
+  <body>
+    <!-- ===== NAVBAR ===== -->
+    <header class="main-header">
+      <canvas id="navbar-blueprint"></canvas>
+      <nav class="navbar-wide">
+        <div class="nav-logo">
+          <a href="index.html"
+            ><img
+              src="./img/logo-integra.png"
+              alt="Integra Arquitectos Laguirre"
+          /></a>
         </div>
-        <div class="servicio-img animate-fade-up" style="animation-delay:0.2s">
-          <img src="./img/obras.jpg" alt="Proyecto arquitectónico">
+
+        <ul class="nav-list-wide">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html#quienes-somos">Quiénes somos</a></li>
+          <li><a href="servicios.html" class="active">Servicios</a></li>
+          <li><a href="especialidades.html">Especialidades</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+        <button
+          class="hamburger-toggle"
+          id="hamburger-toggle"
+          aria-label="Abrir menú"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </header>
+
+    <!-- ===== SERVICIOS ===== -->
+    <section class="servicios-section fade-in">
+      <div class="servicios-overlay"></div>
+      <div class="servicios-container">
+        <h2 class="servicios-title animate-fade-up">Nuestros Servicios</h2>
+
+        <!-- Servicio 1 -->
+        <div class="servicio-bloque">
+          <div
+            class="servicio-text animate-fade-up"
+            style="animation-delay: 0.1s"
+          >
+            <h3>Proyectos Arquitectónicos y Ejecución de Obra</h3>
+            <p>
+              Desarrollo integral de proyectos arquitectónicos, desde la
+              conceptualización y el diseño hasta la ejecución de obra nueva,
+              remodelaciones y ampliaciones en todo tipo de edificaciones.
+              Integramos funcionalidad, estética y eficiencia técnica,
+              gestionando permisos y visualizaciones 3D para comunicar cada
+              propuesta de manera efectiva.
+            </p>
+            <br />
+            <p>
+              La creación de espacios va más allá del simple diseño: es un
+              proceso que requiere visión, planeación y una ejecución precisa.
+              En Integra Arquitectos Laguirre, desarrollamos proyectos
+              arquitectónicos desde la idea inicial hasta la obra concluida,
+              integrando creatividad, funcionalidad y eficiencia técnica en cada
+              detalle. Nos ocupamos de gestionar todos los permisos, elaboramos
+              visualizaciones 3D para comunicar la propuesta y ofrecemos
+              soluciones innovadoras adaptadas a las tendencias y necesidades
+              actuales. Nuestro compromiso es entregar obras de alta calidad,
+              optimizando recursos y garantizando la satisfacción total de cada
+              cliente, ya sea en construcciones nuevas, remodelaciones o
+              ampliaciones.
+            </p>
+          </div>
+          <div
+            class="servicio-img animate-fade-up"
+            style="animation-delay: 0.2s"
+          >
+            <img src="./img/obras.jpg" alt="Proyecto arquitectónico" />
+          </div>
+        </div>
+
+        <!-- Servicio 2 -->
+        <div class="servicio-bloque">
+          <div
+            class="servicio-text animate-fade-up"
+            style="animation-delay: 0.1s"
+          >
+            <h3>Construcción, Supervisión y Gestión de Obra</h3>
+            <p>
+              Construcción de obras civiles e industriales bajo los más altos
+              estándares de calidad. Supervisión técnica en sitio, control de
+              materiales, administración de tiempos y presupuestos, asegurando
+              entregas puntuales y óptimas para cada cliente. Incluye obtención
+              de licencias y permisos, así como la gestión integral de
+              proyectos.
+            </p>
+            <br />
+            <p>
+              La ejecución de obra requiere una coordinación experta y una
+              supervisión constante para asegurar el cumplimiento de los más
+              altos estándares de calidad. Nos especializamos en la construcción
+              de proyectos civiles e industriales, brindando un seguimiento
+              técnico en sitio, control de materiales, administración eficiente
+              de tiempos y presupuestos, y asegurando la entrega puntual y
+              óptima en cada etapa. Gestionamos las licencias y permisos
+              necesarios, así como la comunicación transparente con todos los
+              involucrados. Nuestro objetivo es que cada obra se convierta en un
+              referente de solidez, eficiencia y profesionalismo.
+            </p>
+          </div>
+          <div
+            class="servicio-img animate-fade-up"
+            style="animation-delay: 0.2s"
+          >
+            <img src="./img/construccion.jpg" alt="Supervisión de obra" />
+          </div>
+        </div>
+
+        <!-- Servicio 3 -->
+        <div class="servicio-bloque">
+          <div
+            class="servicio-text animate-fade-up"
+            style="animation-delay: 0.1s"
+          >
+            <h3>Comercialización y Arrendamiento de Materiales y Maquinaria</h3>
+            <p>
+              Importación, exportación, compra, venta y renta de materiales,
+              herramientas y maquinaria ligera y pesada para la construcción.
+              Ofrecemos soluciones integrales en logística, almacenamiento y
+              transporte, asegurando la disponibilidad y calidad de los insumos
+              para cada proyecto.
+            </p>
+            <br />
+            <p>
+              Entendemos que el éxito de cualquier proyecto depende también de
+              la calidad y disponibilidad de los recursos. Por ello, ofrecemos
+              soluciones integrales en la importación, exportación, venta y
+              renta de materiales, herramientas y maquinaria especializada para
+              la construcción. Nuestro servicio abarca desde la logística y el
+              almacenamiento hasta el transporte y la entrega puntual en obra,
+              garantizando que cada proyecto cuente con los insumos y equipos
+              necesarios, siempre bajo criterios de calidad y seguridad.
+            </p>
+          </div>
+          <div
+            class="servicio-img animate-fade-up"
+            style="animation-delay: 0.2s"
+          >
+            <img src="./img/maquinaria.jpg" alt="Maquinaria de construcción" />
+          </div>
+        </div>
+
+        <!-- Servicio 4 -->
+        <div class="servicio-bloque">
+          <div
+            class="servicio-text animate-fade-up"
+            style="animation-delay: 0.1s"
+          >
+            <h3>Consultoría y Asesoría Técnica Especializada</h3>
+            <p>
+              Servicios de consultoría y asesoría técnica en arquitectura,
+              ingeniería y construcción. Incluye estudios, análisis de mercado,
+              evaluación de riesgos, elaboración de programas de obra,
+              planeación, obtención de licencias, trámites y especificaciones
+              técnicas.
+            </p>
+            <br />
+            <p>
+              Contar con el respaldo de un equipo experto es fundamental para la
+              toma de decisiones en cualquier obra. Brindamos consultoría y
+              asesoría técnica en arquitectura, ingeniería y construcción,
+              apoyando a nuestros clientes con estudios especializados, análisis
+              de mercado, evaluaciones de riesgo, elaboración de programas de
+              obra y especificaciones técnicas. Nos encargamos de la planeación,
+              gestión de trámites y permisos, y la optimización de recursos,
+              permitiendo que cada proyecto se desarrolle de manera eficiente,
+              segura y conforme a la normativa vigente.
+            </p>
+          </div>
+          <div
+            class="servicio-img animate-fade-up"
+            style="animation-delay: 0.2s"
+          >
+            <img src="./img/consultoria.jpg" alt="Consultoría técnica" />
+          </div>
+        </div>
+
+        <!-- Llamado a acción final -->
+        <div style="text-align: center; margin-top: 38px">
+          <a href="index.html#contacto" class="hero-btn"
+            >¿Tienes un proyecto? Contáctanos</a
+          >
         </div>
       </div>
-      
-      <!-- Servicio 2 -->
-      <div class="servicio-bloque">
-        <div class="servicio-text animate-fade-up" style="animation-delay:0.1s">
-          <h3>Construcción, Supervisión y Gestión de Obra</h3>
-          <p>
-            Construcción de obras civiles e industriales bajo los más altos estándares de calidad. Supervisión técnica en sitio, control de materiales, administración de tiempos y presupuestos, asegurando entregas puntuales y óptimas para cada cliente. Incluye obtención de licencias y permisos, así como la gestión integral de proyectos.
-          </p>
-          <br>
-          <p>
-            La ejecución de obra requiere una coordinación experta y una supervisión constante para asegurar el cumplimiento de los más altos estándares de calidad. Nos especializamos en la construcción de proyectos civiles e industriales, brindando un seguimiento técnico en sitio, control de materiales, administración eficiente de tiempos y presupuestos, y asegurando la entrega puntual y óptima en cada etapa. Gestionamos las licencias y permisos necesarios, así como la comunicación transparente con todos los involucrados. Nuestro objetivo es que cada obra se convierta en un referente de solidez, eficiencia y profesionalismo.
-          </p>
+    </section>
+
+    <footer class="fade-in">
+      <div class="container">
+        <!-- Correo -->
+        <p style="font-size: 1.05rem; margin-bottom: 8px">
+          <a
+            href="mailto:administracion@laguirre.com.mx"
+            style="color: #fff; text-decoration: none"
+          >
+            administracion@laguirre.com.mx
+          </a>
+        </p>
+
+        <!-- Redes sociales -->
+        <div style="margin-bottom: 8px">
+          <svg width="42" height="42" fill="#ffffff" viewBox="0 0 30 30">
+            <circle cx="15" cy="15" r="9" stroke="none" fill="none" />
+            <path
+              d="M19.25 8h-8.5A2.75 2.75 0 0 0 8 10.75v8.5A2.75 2.75 0 0 0 10.75 22h8.5A2.75 2.75 0 0 0 22 19.25v-8.5A2.75 2.75 0 0 0 19.25 8zM20.5 19.25a1.25 1.25 0 0 1-1.25 1.25h-8.5a1.25 1.25 0 0 1-1.25-1.25v-8.5a1.25 1.25 0 0 1 1.25-1.25h8.5a1.25 1.25 0 0 1 1.25 1.25v8.5z"
+            />
+            <circle cx="15" cy="15" r="3.25" stroke="#fff" stroke-width="1.5" />
+            <circle cx="19" cy="11" r="0.8" fill="#fff" />
+          </svg>
+          <svg width="42" height="42" fill="#ffffff" viewBox="0 0 30 30">
+            <path
+              d="M11.56 21h-2.8V12.04h2.8V21zM10.16 10.8c-.87 0-1.44-.58-1.44-1.32 0-.75.59-1.31 1.47-1.31.89 0 1.44.56 1.45 1.31 0 .74-.56 1.32-1.47 1.32zm3.65 10.2h2.79V16c0-.26.02-.51.1-.69.22-.51.72-1.03 1.56-1.03 1.1 0 1.54.77 1.54 1.89v4.82h2.79V15.7c0-2.86-1.53-4.19-3.57-4.19-1.65 0-2.39.92-2.8 1.56v.01h-.02c.01-.02.02-.04.02-.06V12.04h-2.8c.04.81 0 8.96 0 8.96z"
+            />
+          </svg>
         </div>
-        <div class="servicio-img animate-fade-up" style="animation-delay:0.2s">
-          <img src="./img/construccion.jpg" alt="Supervisión de obra">
-        </div>
+
+        <!-- Copyright -->
+        <p style="font-size: 0.95rem">
+          &copy; 2024 Integra Arquitectos Laguirre. Todos los derechos
+          reservados.
+        </p>
       </div>
+    </footer>
 
-      <!-- Servicio 3 -->
-      <div class="servicio-bloque">
-        <div class="servicio-text animate-fade-up" style="animation-delay:0.1s">
-          <h3>Comercialización y Arrendamiento de Materiales y Maquinaria</h3>
-          <p>
-            Importación, exportación, compra, venta y renta de materiales, herramientas y maquinaria ligera y pesada para la construcción. Ofrecemos soluciones integrales en logística, almacenamiento y transporte, asegurando la disponibilidad y calidad de los insumos para cada proyecto.
-          </p>
-          <br>
-          <p>
-            Entendemos que el éxito de cualquier proyecto depende también de la calidad y disponibilidad de los recursos. Por ello, ofrecemos soluciones integrales en la importación, exportación, venta y renta de materiales, herramientas y maquinaria especializada para la construcción. Nuestro servicio abarca desde la logística y el almacenamiento hasta el transporte y la entrega puntual en obra, garantizando que cada proyecto cuente con los insumos y equipos necesarios, siempre bajo criterios de calidad y seguridad.
-          </p>
-        </div>
-        <div class="servicio-img animate-fade-up" style="animation-delay:0.2s">
-          <img src="./img/maquinaria.jpg" alt="Maquinaria de construcción">
-        </div>
-      </div>
-
-      <!-- Servicio 4 -->
-      <div class="servicio-bloque">
-        <div class="servicio-text animate-fade-up" style="animation-delay:0.1s">
-          <h3>Consultoría y Asesoría Técnica Especializada</h3>
-          <p>
-            Servicios de consultoría y asesoría técnica en arquitectura, ingeniería y construcción. Incluye estudios, análisis de mercado, evaluación de riesgos, elaboración de programas de obra, planeación, obtención de licencias, trámites y especificaciones técnicas.
-          </p>
-          <br>
-          <p>
-            Contar con el respaldo de un equipo experto es fundamental para la toma de decisiones en cualquier obra. Brindamos consultoría y asesoría técnica en arquitectura, ingeniería y construcción, apoyando a nuestros clientes con estudios especializados, análisis de mercado, evaluaciones de riesgo, elaboración de programas de obra y especificaciones técnicas. Nos encargamos de la planeación, gestión de trámites y permisos, y la optimización de recursos, permitiendo que cada proyecto se desarrolle de manera eficiente, segura y conforme a la normativa vigente.
-          </p>
-        </div>
-        <div class="servicio-img animate-fade-up" style="animation-delay:0.2s">
-          <img src="./img/consultoria.jpg" alt="Consultoría técnica">
-        </div>
-      </div>
-
-      <!-- Llamado a acción final -->
-      <div style="text-align:center;margin-top:38px;">
-        <a href="index.html#contacto" class="hero-btn">¿Tienes un proyecto? Contáctanos</a>
-      </div>
-    </div>
-  </section>
-
-  <footer class="fade-in">
-    <div class="container">
-      <p>&copy; 2025 Integra Arquitectos Laguirre. Todos los derechos reservados.</p>
-    </div>
-  </footer>
-
-  <script src="main.js"></script>
-</body>
+    <script src="main.js"></script>
+  </body>
 </html>
