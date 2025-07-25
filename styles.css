@@ -57,7 +57,8 @@ footer {
   top: 0;
   width: 100%;
   min-height: 140px;
-  background: linear-gradient(100deg, #23253b, #191a25);
+  background: rgba(230, 230, 230, 0.12);
+
   transition: min-height .3s, background .3s, box-shadow .3s;
   z-index: 1500;
 }
@@ -82,7 +83,7 @@ footer {
   padding: 0 24px;
 }
 .nav-logo img {
-  height: 120px;
+  height: 150px;
   width: auto;
   transition: height .3s;
 }
@@ -107,7 +108,6 @@ footer {
   color: var(--color-dark);
   background: var(--color-gold);
 }
-
 /* ========== HERO ========== */
 .hero-full {
   position: relative;

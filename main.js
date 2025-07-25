@@ -162,38 +162,28 @@ window.addEventListener('resize', animateBlueprintNavbar);
 window.addEventListener('DOMContentLoaded', animateBlueprintNavbar);
 
 // ========== TYPEWRITER HERO ==========
-document.addEventListener("DOMContentLoaded", () => {
-  const el = document.querySelector('.hero-title-main');
-  if (el) {
-    // Si quieres un efecto typewriter solo con spans:
-    const spans = el.querySelectorAll('span');
-    if (spans.length) {
-      let outerIndex = 0, innerIndex = 0;
-      function typeLine() {
-        if (outerIndex < spans.length) {
-          const text = spans[outerIndex].dataset.text || spans[outerIndex].innerText;
-          spans[outerIndex].innerText = '';
-          function typeChar() {
-            if (innerIndex < text.length) {
-              spans[outerIndex].innerText += text[innerIndex];
-              innerIndex++;
-              setTimeout(typeChar, 35);
-            } else {
-              innerIndex = 0;
-              outerIndex++;
-              setTimeout(typeLine, 200);
-            }
-          }
-          typeChar();
-        } else {
-          el.style.borderRight = 'none';
-        }
-      }
-      spans.forEach(s => { s.dataset.text = s.innerText; });
-      typeLine();
+function typeWriterEffect(element, text, speed = 120) {
+  let i = 0;
+  element.innerHTML = ''; // Asegura que esté limpio
+
+  function type() {
+    if (i < text.length) {
+      element.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(type, speed);
     }
   }
+
+  type();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const typewriter = document.getElementById('typewriter');
+  if (typewriter) {
+    typeWriterEffect(typewriter, 'Integra Arquitectos Laguirre', 120);
+  }
 });
+
 
 // ========== ACORDEON ESPECIALIDADES ==========
 document.addEventListener("DOMContentLoaded", () => {
