@@ -54,6 +54,7 @@ footer {
 /* ========== NAVBAR ========== */
 .main-header {
 height: 140px;
+position: relative;
 
 /* eliminamos la altura fija y usamos padding */
 
@@ -76,7 +77,7 @@ background: rgba(25,25,25,.95);
 }
 
 #navbar-blueprint {
-  position: fixed;
+  position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
   pointer-events: none;
@@ -84,6 +85,7 @@ background: rgba(25,25,25,.95);
   z-index: 1400;
 }
 .navbar-wide {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -747,6 +749,7 @@ footer p {
 
 
 /* ===== MENÚ HAMBURGUESA PARA MÓVILES ===== */
+
 .hamburger-toggle {
   display: none;
   flex-direction: column;
@@ -757,9 +760,7 @@ footer p {
   background: none;
   border: none;
 }
-
 .hamburger-toggle span {
-  display: block;
   width: 28px;
   height: 3px;
   background: var(--color-white);
@@ -775,31 +776,38 @@ footer p {
     right: 24px;
   }
 
+  .navbar-wide {
+    position: relative;
+  }
+
   .nav-list-wide {
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    flex-direction: column;
-    background: rgba(15, 15, 15, 0.98);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
+    z-index: 1401; /* justo encima del canvas (1400) */
+    background: none;
   }
 
   .nav-list-wide.open {
     max-height: 400px;
-    transition: max-height 0.4s ease-in;
     padding: 10px 0;
+    transition: max-height 0.4s ease-in;
+    /* Fondo semitransparente para que se vea la cuadrícula */
+    background: rgba(15, 15, 15, 0.5) !important;
+    z-index: 1500 !important;
   }
 
   .nav-list-wide a {
+    display: block;
     padding: 12px 16px;
     font-size: 1.05rem;
-    width: 100%;
-    display: block;
   }
 }
+
 
 
 
