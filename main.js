@@ -11,8 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   window.addEventListener('scroll', revealOnScroll);
   revealOnScroll();
-
-  
 });
 
 // ========== CONTADOR ANIMADO ==========
@@ -48,39 +46,41 @@ function activateCountersWhenVisible() {
     });
   }
   window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll(); // Por si ya está en pantalla al cargar
+  onScroll();
 }
 document.addEventListener('DOMContentLoaded', activateCountersWhenVisible);
 
-// ========== BLUEPRINT NAVBAR ANIMADO (sin parpadeos) ==========
+// ========== NAVBAR BLUEPRINT CANVAS ==========
+let lastCanvasW = 0;
+let lastCanvasH = 0;
+
 function animateBlueprintNavbar() {
   const canvas = document.getElementById('navbar-blueprint');
-  const nav = document.querySelector('.main-header');
+  const nav    = document.querySelector('.main-header');
   if (!canvas || !nav) return;
 
-  // Solo redimensiona el canvas si el tamaño cambió (NO en cada frame)
-  const navHeight = nav.offsetHeight;
-  const dpr = window.devicePixelRatio || 1;
-  const width = window.innerWidth * dpr;
-  const height = navHeight * dpr;
+  const dpr    = window.devicePixelRatio || 1;
+  const width  = window.innerWidth * dpr;
+  const height = nav.offsetHeight * dpr; // Usamos offsetHeight para medición más estable :contentReference[oaicite:7]{index=7}
 
-  if (canvas.width !== width || canvas.height !== height) {
-    canvas.width = width;
+  if (lastCanvasW !== width || lastCanvasH !== height) {
+    canvas.width  = width;
     canvas.height = height;
-    canvas.style.width = window.innerWidth + "px";
-    canvas.style.height = navHeight + "px";
+    canvas.style.width  = window.innerWidth + "px";
+    canvas.style.height = nav.offsetHeight  + "px";      // Ajustamos con offsetHeight :contentReference[oaicite:8]{index=8}
+    lastCanvasW = width;
+    lastCanvasH = height;
   }
 
   const ctx = canvas.getContext('2d');
   ctx.setTransform(1, 0, 0, 1, 0, 0);
   ctx.scale(dpr, dpr);
-
   const t = performance.now() / 1200;
-  ctx.clearRect(0, 0, window.innerWidth, navHeight);
+  ctx.clearRect(0, 0, window.innerWidth, nav.offsetHeight);
 
-  // Líneas horizontales animadas
+  // Líneas horizontales
   for (let i = 0; i < 4; i++) {
-    const y = 25 + i * (navHeight / 6);
+    const y = 25 + i * (nav.clientHeight / 6);
     const alpha = 0.13 + 0.09 * Math.abs(Math.sin(t + i));
     ctx.beginPath();
     ctx.moveTo(0, y);
@@ -91,13 +91,13 @@ function animateBlueprintNavbar() {
     ctx.stroke();
   }
 
-  // Líneas verticales animadas
+  // Líneas verticales
   for (let i = 0; i < window.innerWidth / 140; i++) {
     const x = 80 + i * 140;
     const alpha = 0.12 + 0.08 * Math.abs(Math.cos(t + i));
     ctx.beginPath();
     ctx.moveTo(x, 0);
-    ctx.lineTo(x, navHeight);
+    ctx.lineTo(x, nav.clientHeight);
     ctx.strokeStyle = `rgba(255, 255, 255, ${alpha})`;
     ctx.lineWidth = 1.05;
     ctx.setLineDash([7, 12]);
@@ -105,10 +105,10 @@ function animateBlueprintNavbar() {
   }
   ctx.setLineDash([]);
 
-  // Círculos técnicos pulsantes
+  // Círculos pulsantes
   for (let i = 0; i < 7; i++) {
     let cx = 60 + i * (window.innerWidth - 120) / 6;
-    let cy = navHeight / 2 + ((i % 2 === 0) ? -30 : 38);
+    let cy = nav.clientHeight / 2 + ((i % 2 === 0) ? -30 : 38);
     let pulse = 7 + 3 * Math.abs(Math.sin(t * 1.1 + i));
     let alpha = 0.12 + 0.20 * Math.abs(Math.cos(t * 1.1 + i));
     ctx.beginPath();
@@ -120,21 +120,17 @@ function animateBlueprintNavbar() {
     ctx.globalAlpha = 1;
   }
 
-  // Escalímetro animado (regla técnica)
-  const rulerY = navHeight - 24;
+  // Regla inferior
+  const rulerY = nav.clientHeight - 24;
   const step = 24;
   ctx.beginPath();
   ctx.moveTo(30, rulerY);
   ctx.lineTo(window.innerWidth - 30, rulerY);
   ctx.strokeStyle = "rgba(255, 255, 255, 0.44)";
   ctx.lineWidth = 2.3;
-  ctx.setLineDash([]);
-  ctx.shadowColor = "rgba(255, 255, 255, 0.25)";
-  ctx.shadowBlur = 4;
   ctx.stroke();
-  ctx.shadowBlur = 0;
 
-  // Marcas animadas de escalímetro
+  // Marcas
   for (let x = 30; x < window.innerWidth - 30; x += step) {
     let tall = (x / step) % 5 === 0 ? 19 : 10;
     let ani = 1.0 + 0.22 * Math.sin(t * 1.7 + x / 100);
@@ -146,7 +142,7 @@ function animateBlueprintNavbar() {
     ctx.stroke();
   }
 
-  // Numeritos de escala (cada 5 marcas)
+  // Números
   ctx.font = "11px monospace";
   ctx.fillStyle = "rgba(255, 255, 255, 0.40)";
   for (let x = 30, k = 0; x < window.innerWidth - 30; x += step) {
@@ -161,11 +157,10 @@ function animateBlueprintNavbar() {
 window.addEventListener('resize', animateBlueprintNavbar);
 window.addEventListener('DOMContentLoaded', animateBlueprintNavbar);
 
-// ========== TYPEWRITER HERO ==========
+// ========== TYPEWRITER ==========
 function typeWriterEffect(element, text, speed = 120) {
   let i = 0;
-  element.innerHTML = ''; // Asegura que esté limpio
-
+  element.innerHTML = '';
   function type() {
     if (i < text.length) {
       element.innerHTML += text.charAt(i);
@@ -173,10 +168,8 @@ function typeWriterEffect(element, text, speed = 120) {
       setTimeout(type, speed);
     }
   }
-
   type();
 }
-
 document.addEventListener('DOMContentLoaded', () => {
   const typewriter = document.getElementById('typewriter');
   if (typewriter) {
@@ -184,28 +177,27 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-
-// ========== ACORDEON ESPECIALIDADES ==========
+// ========== ACORDEÓN ==========
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll('.acordeon-item').forEach(item => {
-    item.addEventListener('click', function(e) {
+    item.addEventListener('click', function () {
       if (this.classList.contains('active')) {
         this.classList.remove('active');
-        return;
+      } else {
+        document.querySelectorAll('.acordeon-item').forEach(i => i.classList.remove('active'));
+        this.classList.add('active');
       }
-      document.querySelectorAll('.acordeon-item').forEach(i => i.classList.remove('active'));
-      this.classList.add('active');
     });
   });
 });
 
-// ========== NAVBAR STICKY + SCROLLED ==========
+// ========== NAVBAR SCROLLED ==========
 window.addEventListener('scroll', () => {
   document.querySelector('.main-header')
     .classList.toggle('scrolled', window.scrollY > 50);
 });
 
-// ========== SCROLL-SPY (menú activo según sección) ==========
+// ========== SCROLL-SPY ==========
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-list-wide a');
 const spy = new IntersectionObserver((entries) => {
@@ -220,7 +212,7 @@ const spy = new IntersectionObserver((entries) => {
 }, { threshold: 0.6 });
 sections.forEach(sec => spy.observe(sec));
 
-
+// ========== MENÚ HAMBURGUESA ==========
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.getElementById("hamburger-toggle");
   const menu = document.querySelector(".nav-list-wide");
@@ -230,7 +222,6 @@ document.addEventListener("DOMContentLoaded", () => {
       menu.classList.toggle("open");
     });
 
-    // Cerrar el menú al hacer clic en un enlace
     menu.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
         menu.classList.remove("open");

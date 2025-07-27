@@ -53,22 +53,30 @@ footer {
 
 /* ========== NAVBAR ========== */
 .main-header {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  min-height: 140px;
-  background: rgba(230, 230, 230, 0.12);
+height: 140px;
 
-  transition: min-height .3s, background .3s, box-shadow .3s;
-  z-index: 1500;
+/* eliminamos la altura fija y usamos padding */
+
+padding: 24px 0;
+background: rgba(230, 230, 230, 0.12);
+
+transition: height 0.3s ease, background 0.3s, box-shadow 0.3s;
+
+transition: padding 0.3s ease, background 0.3s, box-shadow 0.3s;
 }
 .main-header.scrolled {
-  min-height: 80px;
-  box-shadow: 0 2px 12px rgba(0,0,0,.5);
-  background: rgba(25,25,35,.95);
+
+height: 80px;
+
+/* reducimos sólo el padding */
+
+padding: 8px 0;
+box-shadow: 0 2px 12px rgba(0,0,0,.5);
+background: rgba(25,25,25,.95);
 }
+
 #navbar-blueprint {
-  position: absolute;
+  position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
   pointer-events: none;
@@ -792,6 +800,7 @@ footer p {
     display: block;
   }
 }
+
 
 
 /* =========== FIN =========== */
